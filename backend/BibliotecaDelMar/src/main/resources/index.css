@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap'); /*normal*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;1,100&display=swap'); /*Light 100 Italic*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap'); /*light 300*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');/*Light 300 Italic*/
+/*CABECERO*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300&family=IBM+Plex+Sans:wght@200;300&family=Lilita+One&family=Montserrat:wght@300&display=swap');
+
+
+body{
+  background-image: url("./static/img/Fondo\ pantalla.png");
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*es el elemento trasparente que parece ser un divisor de secciones*/
+.b-example-divider {
+    height: 10px;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  /* CABECERO */
+  .header{ 
+      background-color: #718f94 !important; 
+      border: 2px #718f94 !important ;
+      font-family: 'IBM Plex Sans', sans-serif;
+  }
+.imagenPortada{
+  width: 80px;
+}
+  .botonCard{
+      background-color:#dfc290 !important;
+  }
+
+  /*en el formulario*/
+  .btn-primary{
+    color:black;
+    background-color:#c3ad7c !important;
+  }
+  .btn-primary :hover{
+    color:black;
+    background-color: #dfc290;
+  }
+  .form-check-input[type=checkbox]:checked{
+    background-color: #718f94 !important;
+  }
+  .form-check-input:checked{
+    border-color: #718f94 !important;
+  }
+
+
+/*iINCIO (ACTIVIDADES)*/
+.imagenActividades{
+  height: 200px;
+}
+.imagenActividades > div{
+  height: 100%;
+}
+.imagenActividadesProps{
+  height:100% ;
+  display: block;
+}
+/* esto le da la imagen especial de cada*/
+.imagenClubLectura{
+  background-image: url('./static/img/Clubdelectura.png');
+  background-size: contain; /*ajustamos la img*/
+}
+.imagenJuevesMusical{
+  background-image: url('./static/img/Juevesmusical.png');
+  background-size: contain; /*ajustamos la img*/
+}
+.imagenCharlas{
+  background-image: url('./static/img/CharlasDebates.png');
+  background-size: contain; /*ajustamos la img*/
+}
+
+/**/
+.mask{
+ background-color: rgba(0, 0, 0, 0.6);
+}
+
+  /* el hr que tiene estilos*/
+  .divider{
+    height: 5px !important;
+    color: #718f94 !important;
+  }
+
+  /* contenedor que abarca la imagen del detalle
+   .contenedorImagen{
+    display: flex;
+    align-items: center;
+    
+  }  */
+
+ /* PRODUCTOS*/
+  .tablaProductos{
+    background-color: rgba(172, 190, 194, 0.555);
+    border-radius: 5px;
+  }
+  /*ajusto la distribución que queiro que tenga mi tabla productos, en la que quiero que destaque titulo y foto*/
+  .tablaProductos table{
+    width: 100%;
+    
+  }
+  .identificadorT{
+    width: 10%;
+  }
+  .tituloT{
+    width: 20%;
+  }
+  .detallesT{
+    width: 10%;
+  }
+  .anchoTabla{
+    height: 20%;
+}
+  table, th, td{
+    border-collapse: collapse;
+  }
+  .tablaLibro{
+    width: 50px;
+    height: auto;
+  }
+/**/
+
+  /*SOBRE NOSOTROS: MAPA*/
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+  .embed-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  /*DETALLE*/
+.cardDetalleGrande{
+    background-color: rgba(255, 255, 255, 0.171);
+}
+
+  /*tabs detalle producto*/
+.nav-tabs .nav-link{
+  font-weight: bold;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  color: #718f94 !important;
+  border-color:#718f94;
+  font-weight: bold;
+}
+.navItemDetail{
+  opacity: 80%;
+}
+
+/**/
+.contenedorImagen{
+    display: flex;
+    justify-content: center;
+} 
+.cardDetalle{
+  background-color: rgb(113, 143, 148,0.4);
+    border-radius: 5px;
+}
+  
+.note-warning {
+    border-color: rgba(241, 182, 114, 0.74);
+}
+
+  /*CAROUSEL*/
+.carousel-control-next, .carousel-control-prev{
+  color:#ecc98b;
+}
+.carousel-item.active, .carousel-item{
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+.caruselFade{
+  height: 500px;
+  display: flex;
+}
+ .imgCarrousel{
+  width: 100%;
+  height: auto;
+} 
+.imgCarouselActividad{
+  width: 100%;
+  height: auto;
+}
+.form-control-dark {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+.text-small {
+    font-size: 85%;
+}
+.dropdown-toggle {
+    outline: 0;
+}
+  /* ajusta el tamaño del formulario para que tenga espaciado */
+.containerForm{ 
+   margin-left: 10%;
+   margin-right: 10%;
+}
+
+
+
+
+/*SECCION NOTICIAS Y ACTIVIDADES*/
+.infoNoticia{ /*esto es lo que hace que se edite el texto de publicado por...*/
+  font-style: italic;
+  font-size: small;
+}
+  /* la imagen tiene el texto que se le puede poner a los lados*/
+.imagenNoticia{
+    width: 70%;
+}
+.imagenNoticiaAjusted{ /* propiedad que me ajusta la imagen en todo el contenedor*/
+  background-size: contain;
+}
+  /* titulo que hay en las preguntas*/
+.noticiaPregunta{
+    font-size: larger;
+}
+  #imagenEntevista{
+    width:90%;
+    height: auto;
+  }
+
+
+/*IFRAME NOTICIAS TWITTER*/
+  .iframeTWT{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+}
+
+
+/*FAQ ACORDEON*/
+.accordion-button:not(.collapsed) {
+  color:#5c6a6b;
+}
+.accordion-button{
+  color: #718f94;
+  background-color: #d3bd9867 !important;
+}
+.accordion-button:focus{
+  border-color:#718f94 !important;
+}
+
+
+/*LINKS*/
+a{
+  color:black;
+}
+a:hover{
+  color: #0e52c1;
+}
+/* links especiales que interesa tener marcados*/
+.links{
+  color:blue;
+  font-size:larger;
+}
+/* mismos links pero cuando no interesa añadirle grande*/
+.link{
+  color:#0000ff;
+}
+.linkCarousel{
+  color: white;
+}
+.linkCarousel:hover{
+  color: #c9d8da;
+}
+.linkHover:hover{
+  color:#0e52c1;
+}
+
+
+caption{
+ margin-left: 15px;
+ font-size: medium;
+}
+
+/*GRUPO NOTICIAS*/
+.grupoNoticias> li{
+  background-color: rgba(255, 255, 255, 0.486);
+}
+.rounded-pill{
+  background-color:#dfc290 !important;
+  color:black;
+}
+
+/*LOGINS*/
+.seccionLogin{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 700px;
+}
+.login-card-header{
+  background-color: #c6d3d5 !important;
+  height: 508px;
+}
+/*
+.cardLogin{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+}
+.loginTextoCabecero{
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+} */
+.cardLogin{
+  border-radius: 1rem;
+}
+h4{
+  color: #92aad0;
+}
+.subtextoInfoForm{
+  color: #45526e !important;
+}
+.alert-danger {
+  color: #423336 !important;
+  background-color: #f1d1d7 !important;
+}
+.alert-heading {
+  color: inherit;
+  font-size: larger;
+}
+/**/
+
+/*FORMULARIO DE REGISTRO*/
+.cardRegistro{
+  align-items:center;
+  height: 100%;
+  justify-content: center;
+}
+.bi:before{
+  vertical-align: none;
+}

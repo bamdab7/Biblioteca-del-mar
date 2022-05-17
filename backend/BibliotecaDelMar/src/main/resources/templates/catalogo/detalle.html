@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--ARREGLAR-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
+    <link href="../../index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <title>Detalle producto</title>
+</head>
+<body>
+    
+    <!-- Header -->
+<header>
+    <div class="b-example-divider"></div>
+    <nav class="py-2 bg-light border-bottom header">
+      <div class="container d-flex flex-wrap ">
+        <ul class="nav me-auto">
+          <li class="nav-item"><a href="../inicio/index.html" class="nav-link link-dark px-2 active" aria-current="page">Inicio</a></li>
+          <li class="nav-item"><a href="../noticias/gruponoticias.html" class="nav-link link-dark px-2">Noticias</a></li>
+          <li class="nav-item"><a href="../catalogo/productos.html" class="nav-link link-dark px-2">Catálogo</a></li>
+          <li class="nav-item"><a href="../fa/FA.html" class="nav-link link-dark px-2">FAQs</a></li>
+          <li class="nav-item"><a href="../historia/sobre biblioteca.html" class="nav-link link-dark px-2">Historia</a></li>
+        </ul>
+        <ul class="nav">
+          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Login</a></li>
+          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="py-3 header ">
+      <div class="container d-flex flex-wrap justify-content-center">
+          <div class="container d-flex flex-wrap justify-content-center">
+        <a href="../inicio/index.html" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
+              <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
+            </svg>
+          <span class="fs-4">BIBLIOTECA DEL MAR</span>
+        </a>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+      </div>
+    </header>
+   <!-- Header -->
+    <div class="b-example-divider"></div> 
+</header>
+
+<div class="card cardDetalleGrande">
+<div class="container">
+    <div class="container">
+        <nav aria-label="breadcrumb" class= "card-header">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="../inicio/index.html">Inicio</a></li>
+              <li class="breadcrumb-item"><a href="../catalogo/productos.html">Catálogo</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Detalle producto</li>
+            </ol>
+          </nav>
+        <div class="row row-cols-12"> <!--imagen del producto-->
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-6 contenedorImagen ">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/5177Uozx9-L._SY264_BO1,204,203,200_QL40_ML2_.jpg" alt="libro" class="mt-4 mb-4">
+            </div>
+            
+            
+            <div class="col-xl-7 col-lg-7 col-md-6 col-sm-6"> <!--card que tiene el detalle del producto-->
+                <div class="cardDetalle text-center mt-4 vh-80 align-items-center">
+                    <div class="card-header "><em>Autor:</em></div>
+                        <div class="card-body">
+                            <h5 class="card-title ">Título libro:</h5>
+                            <p class="card-text ">
+                                This is a longer card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn botonCard" type="button" href="#"><i class="bi bi-bookmark-plus"> Reservar </i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div> 
+        
+    </div> <!--containter que agrupa el detalle producto menos el display de + info-->
+
+    <div class="mt-2"> <!--div para nota de aviso-->
+        <p class="note note-warning">
+            <i class="fas fa-exclamation-circle"></i>
+            <strong>Aviso:</strong> Recuerde que los libros una vez reservados tienen un tiempo de 15 días en los que tendrá que devolverlo. De no ser así se penalizará sin días de reserva para futuros libros.
+        </p>
+    </div>
+
+
+    <div class="m-4">
+        <ul class="nav nav-tabs nav-justified " id="myTab">
+            <li class="nav-item navItemDetail" role="presentation">
+                <a href="#detalles" class="nav-link active" data-bs-toggle="tab">Detalles</a>
+            </li>
+            <li class="nav-item navItemDetail" role="presentation">
+                <a href="#autor" class="nav-link" data-bs-toggle="tab" >Autor</a>
+            </li>
+            <li class="nav-item navItemDetail" role="presentation">
+                <a href="#more" class="nav-link" data-bs-toggle="tab">Más detalles</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="detalles">
+                <h4 class="mt-2 lead fw-bold">Detalles del producto</h4>
+                <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+            </div>
+            <div class="tab-pane fade" id="autor">
+                <h4 class="mt-2 lead fw-bold">Sobre el autor</h4>
+                <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
+                <p>Tempus pharetra congue pretium accumsan molestie ut nulla sociosqu a, suspendisse dui euismod montes vulputate quam potenti mollis. Sagittis pulvinar consequat class blandit, neque venenatis dignissim inceptos cubilia, lobortis vestibulum fames. Vulputate dis erat interdum dictumst lectus porta metus id nunc enim platea, habitasse pellentesque mi conubia habitant neque gravida consequat sapien taciti lacinia, malesuada class convallis mattis mus aptent nostra blandit sodales facilisi.</p>
+            </div>
+            <div class="tab-pane fade" id="more">
+                <h4 class="mt-2 lead fw-bold">La editorial</h4>
+                
+                <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
+                <p>Tempus pharetra congue pretium accumsan molestie ut nulla sociosqu a, suspendisse dui euismod montes vulputate quam potenti mollis. Sagittis pulvinar consequat class blandit, neque venenatis dignissim inceptos cubilia, lobortis vestibulum fames. Vulputate dis erat interdum dictumst lectus porta metus id nunc enim platea, habitasse pellentesque mi conubia habitant neque gravida consequat sapien taciti lacinia, malesuada class convallis mattis mus aptent nostra blandit sodales facilisi.</p>
+                <p>Tempus pharetra congue pretium accumsan molestie ut nulla sociosqu a, suspendisse dui euismod montes vulputate quam potenti mollis. Sagittis pulvinar consequat class blandit, neque venenatis dignissim inceptos cubilia, lobortis vestibulum fames. Vulputate dis erat interdum dictumst lectus porta metus id nunc enim platea, habitasse pellentesque mi conubia habitant neque gravida consequat sapien taciti lacinia, malesuada class convallis mattis mus aptent nostra blandit sodales facilisi.</p>
+            </div>
+        </div>
+    </div>
+</div> <!--contenedor grupal y global-->
+</div>
+
+  <!-- Footer -->
+<div class="b-example-divider"></div>
+<footer class="text-center text-lg-start bg-light text-muted" >
+    <!-- Section: Social media -->
+    <section
+    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+    >
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+        <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+        </a>
+    </div>
+    <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+    <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+            </h6>
+            <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+            </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            Products
+            </h6>
+            <p>
+            <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+            <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+            <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+            <a href="#!" class="text-reset">Laravel</a>
+            </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+            </h6>
+            <p>
+            <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+            <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+            <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+            <a href="#!" class="text-reset">Help</a>
+            </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+            Contact
+            </h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+    <div class="b-example-divider"></div>   
+</footer>
+
+
+</body>
+</html>

@@ -7,7 +7,7 @@
 
 
 body{
-  background-image: url("./static/img/Fondo\ pantalla.png");
+  background-image: url("@{img/Fondo\ pantalla.png}");
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -63,15 +63,15 @@ body{
 }
 /* esto le da la imagen especial de cada*/
 .imagenClubLectura{
-  background-image: url('./static/img/Clubdelectura.png');
+  background-image: url('@{img/Clubdelectura.png}');
   background-size: contain; /*ajustamos la img*/
 }
 .imagenJuevesMusical{
-  background-image: url('./static/img/Juevesmusical.png');
+  background-image: url('@{img/Juevesmusical.png}');
   background-size: contain; /*ajustamos la img*/
 }
 .imagenCharlas{
-  background-image: url('./static/img/CharlasDebates.png');
+  background-image: url('@{img/CharlasDebates.png}');
   background-size: contain; /*ajustamos la img*/
 }
 

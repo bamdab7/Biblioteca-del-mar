@@ -22,54 +22,19 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css"
         rel="stylesheet"
         />
-        <link href="../../index.css" rel="stylesheet">
+        <link th:href="@{/index.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <title>Noticia 5</title>
 </head>
 <!-- Header -->
-<header>
-    <div class="b-example-divider"></div>
-    <nav class="py-2 bg-light border-bottom header">
-      <div class="container d-flex flex-wrap ">
-        <ul class="nav me-auto">
-          <li class="nav-item"><a href="../inicio/index.html" class="nav-link link-dark px-2 active" aria-current="page">Inicio</a></li>
-          <li class="nav-item"><a href="../noticias/gruponoticias.html" class="nav-link link-dark px-2">Noticias</a></li>
-          <li class="nav-item"><a href="../catalogo/productos.html" class="nav-link link-dark px-2">Catálogo</a></li>
-          <li class="nav-item"><a href="../fa/FA.html" class="nav-link link-dark px-2">FAQs</a></li>
-          <li class="nav-item"><a href="../historia/sobre biblioteca.html" class="nav-link link-dark px-2">Historia</a></li>
-        </ul>
-        <ul class="nav">
-          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Login</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
-        </ul>
-      </div>
-    </nav>
-    <header class="py-3 header ">
-      <div class="container d-flex flex-wrap justify-content-center">
-          <div class="container d-flex flex-wrap justify-content-center">
-        <a href="../inicio/index.html" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
-              <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
-            </svg>
-          <span class="fs-4">BIBLIOTECA DEL MAR</span>
-        </a>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-      </div>
-    </header>
-   <!-- Header -->
-    <div class="b-example-divider"></div> 
-  </header>
-
+<header th:insert="fragments/menu :: menu-principal"></header>
 <body>
-
 <div>
     <!-- Background image -->
     <div
         class="p-5 text-center bg-image"
         style="
-            background-image: url('../../static/img/portadaNoticia5.jpg');
+            background-image: url('/img/portadaNoticia5.jpg');
             height: 400px;">
         <div class="mask">
             <div class="d-flex justify-content-center align-items-center h-100">
@@ -86,8 +51,8 @@
   <div> <!--breadcrump-->
     <nav aria-label="breadcrumb" class="card-header">
         <ol class="breadcrumb mt-2  ml-3">
-          <li class="breadcrumb-item"><a href="../inicio/index.html">Inicio</a></li>
-          <li class="breadcrumb-item"><a href="../gruponoticias.html">Noticias</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/inicio}">Inicio</a></li>
+          <li class="breadcrumb-item"><a th:href="@{/noticias}">Noticias</a></li>
           <li class="breadcrumb-item active" aria-current="page">Noticias destacadas: peculiar visitante</li>
         </ol>
     </nav>
@@ -97,7 +62,7 @@
     <div class="row align-items-center">
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
         <div class="text-center iframeTWT">
-          <iframe id="twitter-widget-0" scrolling="no" allowfullscreen="" class="" style=" visibility: visible; height: 553px; display: block; flex-grow: 1; flex-shrink: 1;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3NwYWNlX2NhcmQiOnsiYnVja2V0Ijoib2ZmIiwidmVyc2lvbiI6bnVsbH19&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1329158727262298112&amp;lang=es&amp;origin=https%3A%2F%2Fwww.antena3.com%2Fnoticias%2Fmundo%2Fel-visitante-mas-inusual-de-un-acuario-de-california-mientras-permanecia-cerrado-al-publico-por-la-pandemia_202011195fb635f31d91b60001a50ea2.html&amp;sessionId=11c682171a4e0026834869e9a29a951afb7c43e6&amp;siteScreenName=A3Noticias&amp;theme=light&amp;widgetsVersion=c8fe9736dd6fb%3A1649830956492&amp;width=550px" data-tweet-id="1329158727262298112"  loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="100%" style="border:0;"></iframe>
+          <iframe id="twitter-widget-0" class="" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3NwYWNlX2NhcmQiOnsiYnVja2V0Ijoib2ZmIiwidmVyc2lvbiI6bnVsbH19&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1329158727262298112&amp;lang=es&amp;origin=https%3A%2F%2Fwww.antena3.com%2Fnoticias%2Fmundo%2Fel-visitante-mas-inusual-de-un-acuario-de-california-mientras-permanecia-cerrado-al-publico-por-la-pandemia_202011195fb635f31d91b60001a50ea2.html&amp;sessionId=11c682171a4e0026834869e9a29a951afb7c43e6&amp;siteScreenName=A3Noticias&amp;theme=light&amp;widgetsVersion=c8fe9736dd6fb%3A1649830956492&amp;width=550px" data-tweet-id="1329158727262298112" width="100%" style="border:0;"></iframe>
         </div>  
       </div>
       <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
@@ -112,149 +77,11 @@
     </div>
   </div> <!--cardbody-->
 </div>
-
 </div> <!--container que agrupa todo-->
-
-
-
-
-
-
-
-
-
-
-
-    
 </body>
 
  <!-- Footer -->
  <div class="b-example-divider"></div>
- <footer class="text-center text-lg-start bg-light text-muted" >
-     <!-- Section: Social media -->
-     <section
-     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-     >
-     <!-- Left -->
-     <div class="me-5 d-none d-lg-block">
-         <span>Get connected with us on social networks:</span>
-     </div>
-     <!-- Left -->
- 
-     <!-- Right -->
-     <div>
-         <a href="" class="me-4 text-reset">
-         <i class="fab fa-facebook-f"></i>
-         </a>
-         <a href="" class="me-4 text-reset">
-         <i class="fab fa-twitter"></i>
-         </a>
-         <a href="" class="me-4 text-reset">
-         <i class="fab fa-google"></i>
-         </a>
-         <a href="" class="me-4 text-reset">
-         <i class="fab fa-instagram"></i>
-         </a>
-         <a href="" class="me-4 text-reset">
-         <i class="fab fa-linkedin"></i>
-         </a>
-         <a href="" class="me-4 text-reset">
-         <i class="fab fa-github"></i>
-         </a>
-     </div>
-     <!-- Right -->
-     </section>
-     <!-- Section: Social media -->
- 
-     <!-- Section: Links  -->
-     <section class="">
-     <div class="container text-center text-md-start mt-5">
-         <!-- Grid row -->
-         <div class="row mt-3">
-         <!-- Grid column -->
-         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-             <!-- Content -->
-             <h6 class="text-uppercase fw-bold mb-4">
-             <i class="fas fa-gem me-3"></i>Company name
-             </h6>
-             <p>
-             Here you can use rows and columns to organize your footer content. Lorem ipsum
-             dolor sit amet, consectetur adipisicing elit.
-             </p>
-         </div>
-         <!-- Grid column -->
- 
-         <!-- Grid column -->
-         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-             <!-- Links -->
-             <h6 class="text-uppercase fw-bold mb-4">
-             Products
-             </h6>
-             <p>
-             <a href="#!" class="text-reset">Angular</a>
-             </p>
-             <p>
-             <a href="#!" class="text-reset">React</a>
-             </p>
-             <p>
-             <a href="#!" class="text-reset">Vue</a>
-             </p>
-             <p>
-             <a href="#!" class="text-reset">Laravel</a>
-             </p>
-         </div>
-         <!-- Grid column -->
- 
-         <!-- Grid column -->
-         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-             <!-- Links -->
-             <h6 class="text-uppercase fw-bold mb-4">
-             Useful links
-             </h6>
-             <p>
-             <a href="#!" class="text-reset">Pricing</a>
-             </p>
-             <p>
-             <a href="#!" class="text-reset">Settings</a>
-             </p>
-             <p>
-             <a href="#!" class="text-reset">Orders</a>
-             </p>
-             <p>
-             <a href="#!" class="text-reset">Help</a>
-             </p>
-         </div>
-         <!-- Grid column -->
- 
-         <!-- Grid column -->
-         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-             <!-- Links -->
-             <h6 class="text-uppercase fw-bold mb-4">
-             Contact
-             </h6>
-             <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-             <p>
-             <i class="fas fa-envelope me-3"></i>
-             info@example.com
-             </p>
-             <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-             <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-         </div>
-         <!-- Grid column -->
-         </div>
-         <!-- Grid row -->
-     </div>
-     </section>
-     <!-- Section: Links  -->
- 
-     <!-- Copyright -->
-     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-     © 2021 Copyright:
-     <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-     </div>
-     <!-- Copyright -->
-     <div class="b-example-divider"></div>   
- </footer>
- 
+ <footer th:insert="fragments/footer" class="text-center text-lg-start bg-light text-muted" ></footer> 
  <!-- Footer -->
 </html>

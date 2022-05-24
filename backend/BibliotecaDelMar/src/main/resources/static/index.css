@@ -50,7 +50,7 @@ body{
   }
 
 
-/*iINCIO (ACTIVIDADES)*/
+/*INCIO (ACTIVIDADES)*/
 .imagenActividades{
   height: 200px;
 }
@@ -250,6 +250,13 @@ body{
     justify-content: center;
     margin: 40px auto;
 }
+ #twitter-widget-0{
+ visibility: visible; 
+ height: 553px; 
+ display: block; 
+ flex-grow: 1;
+ flex-shrink: 1;
+ }
 
 
 /*FAQ ACORDEON*/

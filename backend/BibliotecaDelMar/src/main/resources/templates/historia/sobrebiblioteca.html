@@ -14,48 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
-    <link href="../../index.css" rel="stylesheet">
+    <link th:href="@{/index.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
     <title>About</title>
 </head>
+<header th:insert="fragments/menu :: menu-principal"></header>
 <body>
-    
- <!-- Header -->
- <header>
-    <div class="b-example-divider"></div>
-    <nav class="py-2 bg-light border-bottom header">
-      <div class="container d-flex flex-wrap ">
-        <ul class="nav me-auto">
-          <li class="nav-item"><a href="../inicio/index.html" class="nav-link link-dark px-2 active" aria-current="page">Inicio</a></li>
-          <li class="nav-item"><a href="../noticias/gruponoticias.html" class="nav-link link-dark px-2">Noticias</a></li>
-          <li class="nav-item"><a href="../catalogo/productos.html" class="nav-link link-dark px-2">Catálogo</a></li>
-          <li class="nav-item"><a href="../fa/FA.html" class="nav-link link-dark px-2">FAQs</a></li>
-          <li class="nav-item"><a href="../historia/sobre biblioteca.html" class="nav-link link-dark px-2">Historia</a></li>
-        </ul>
-        <ul class="nav">
-          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Login</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
-        </ul>
-      </div>
-    </nav>
-    <header class="py-3 header ">
-      <div class="container d-flex flex-wrap justify-content-center">
-          <div class="container d-flex flex-wrap justify-content-center">
-        <a href="../inicio/index.html" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
-              <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
-            </svg>
-          <span class="fs-4">BIBLIOTECA DEL MAR</span>
-        </a>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-      </div>
-    </header>
-   <!-- Header -->
-    <div class="b-example-divider"></div> 
-  </header>
+
 
 <div class="card container pl-3">
 
@@ -84,7 +50,7 @@
         </div>
         <div class="col-lg-4 col-md-6 mb-2 text-center">
             <h5 class="mb-3 h5 fw-bold text-center">Siempre contigo</h5>
-            <img src="../../static/img/imgClubLectura.jpg"  alt="imagen" width="80%">
+            <img th:src="@{img/imgClubLectura.jpg}"  alt="imagen" width="80%">
         </div>
         <div class="col-lg-4 col-md-6 mb-2">
             <h5 class="mb-3 h5 fw-bold text-center">Las mejoras que destacan</h5>
@@ -108,9 +74,11 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11607.782830848815!2d-8.4297296!3d43.33632514999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2e7cb88050442b%3A0xee9a1939bedf4a70!2sDep%C3%B3sito%20Municipal%20de%20Veh%C3%ADculos!5e0!3m2!1ses!2ses!4v1649411284452!5m2!1ses!2ses" width="480" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div> <!--contenedor mapa-->
         <div class="col-lg-6 col-md-12 col-sm-12">
-          <ol class="list-group list-group-numbered mt-1">
-            <p class="text-center fw-bold h4 mt-2">Curiosidades y Galardones</p>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
+        	<div>
+             	<span class="text-center fw-bold h4 mt-2">Curiosidades y Galardones</span>
+            </div>
+          <ol class="list-group list-group-numbered mt-1">         
+            <li class="list-group-item d-flex justify-content-between align-items-start">         
               <div class="ms-2 me-auto">
                 <div class="fw-bold">Mayor cantidad de libros sobre el Megalodón </div>
                 Disponemos de casi 150 libros distintos dedicados exclusivamente a esta especie marina extinguida
@@ -118,7 +86,7 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-start">
               <div class="ms-2 me-auto">
-                <div class="fw-bold">Mayor proyecto de cuida de las especies marinas de la zona
+                <div class="fw-bold">Mayor proyecto de cuida de las especies marinas de la zona</div>
               </div>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -136,133 +104,11 @@
     </div> <!--contenedor mapa+premios-->
 </div>
 
-  <!-- Footer -->
-<div class="b-example-divider"></div>
-<footer class="text-center text-lg-start bg-light text-muted" >
-    <!-- Section: Social media -->
-    <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-    >
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
-    <div>
-        <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-        </a>
-    </div>
-    <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-    <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
-            </h6>
-            <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-            </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-            Products
-            </h6>
-            <p>
-            <a href="#!" class="text-reset">Angular</a>
-            </p>
-            <p>
-            <a href="#!" class="text-reset">React</a>
-            </p>
-            <p>
-            <a href="#!" class="text-reset">Vue</a>
-            </p>
-            <p>
-            <a href="#!" class="text-reset">Laravel</a>
-            </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
-            </h6>
-            <p>
-            <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-            <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-            <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-            <a href="#!" class="text-reset">Help</a>
-            </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-            Contact
-            </h6>
-            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-            <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
-            </p>
-            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-        </div>
-        <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-    </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-    <div class="b-example-divider"></div>   
-</footer>
-
 </body>
+
+ <!-- Footer -->
+<div class="b-example-divider"></div>
+<footer th:insert="fragments/footer" class="text-center text-lg-start bg-light text-muted" ></footer>
+<!-- Footer -->
+
 </html>

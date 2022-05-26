@@ -51,7 +51,7 @@ DROP TABLE IF EXISTS `editorial`;
 CREATE TABLE `editorial` (
   `idEditorial` int(3) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(155) NOT NULL,
-  `fundacion` date NOT NULL,
+  `fundacion` int(4) NOT NULL,
   `direcionSede` varchar(250) NOT NULL,
   `url` varchar(250) NOT NULL,
   PRIMARY KEY (`idEditorial`)
@@ -237,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-20 17:57:07
+-- Dump completed on 2022-05-26 18:51:29

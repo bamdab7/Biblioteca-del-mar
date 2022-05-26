@@ -29,17 +29,9 @@ CREATE TABLE `autor` (
   `status` enum('ACTIVO','NO ACTIVO') NOT NULL,
   `imagen` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`idAutor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `autor`
---
-
-LOCK TABLES `autor` WRITE;
-/*!40000 ALTER TABLE `autor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `autor` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `editorial`
@@ -55,17 +47,9 @@ CREATE TABLE `editorial` (
   `direcionSede` varchar(250) NOT NULL,
   `url` varchar(250) NOT NULL,
   PRIMARY KEY (`idEditorial`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `editorial`
---
-
-LOCK TABLES `editorial` WRITE;
-/*!40000 ALTER TABLE `editorial` DISABLE KEYS */;
-/*!40000 ALTER TABLE `editorial` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `libro`
@@ -82,7 +66,7 @@ CREATE TABLE `libro` (
   `idEditorial` int(3) NOT NULL,
   `paginas` int(3) DEFAULT NULL,
   `descripcion` text NOT NULL,
-  `palabrasClave` varchar(155) NOT NULL,
+  `imagen` varchar(155) NOT NULL,
   PRIMARY KEY (`idLibro`),
   KEY `librotoeditorial_idx` (`idEditorial`),
   CONSTRAINT `librotoeditorial` FOREIGN KEY (`idEditorial`) REFERENCES `editorial` (`idEditorial`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -237,4 +221,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-26 18:51:29
+-- Dump completed on 2022-05-26 20:14:22

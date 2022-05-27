@@ -1,7 +1,17 @@
-package edu.nerea.proyecto.bilbioteca.entity;
+package edu.nerea.proyecto.biblioteca.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="libro")
 public class Libro {
-
+	
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer idLibro;
 	private String titulo;
 	private String tipo; //enumerado LIBRO, REVOSTA, ENCICLOPEDIA,CD
@@ -9,7 +19,7 @@ public class Libro {
 	private Integer idEditorial;
 	private Integer paginas;
 	private String descripcion;
-	private String palabrasClave;
+	private String imagen;
 	
 	public Libro() {
 		super();
@@ -71,19 +81,19 @@ public class Libro {
 		this.descripcion = descripcion;
 	}
 
-	public String getPalabrasClave() {
-		return palabrasClave;
+	public String getImagen() {
+		return imagen;
 	}
 
-	public void setPalabrasClave(String palabrasClave) {
-		this.palabrasClave = palabrasClave;
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
 	}
 
 	@Override
 	public String toString() {
 		return "Libro [idLibro=" + idLibro + ", titulo=" + titulo + ", tipo=" + tipo + ", saga=" + saga
 				+ ", idEditorial=" + idEditorial + ", paginas=" + paginas + ", descripcion=" + descripcion
-				+ ", palabrasClave=" + palabrasClave + "]";
+				+ ", imagen=" + imagen + "]";
 	}
 	
 	

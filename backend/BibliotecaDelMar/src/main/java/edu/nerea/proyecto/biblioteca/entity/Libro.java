@@ -14,7 +14,7 @@ public class Libro {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer idLibro;
 	private String titulo;
-	private String tipo; //enumerado LIBRO, REVOSTA, ENCICLOPEDIA,CD
+	private String tipo; //enumerado LIBRO, REVISTA, ENCICLOPEDIA,CD
 	private String saga;
 	private Integer idEditorial;
 	private Integer paginas;

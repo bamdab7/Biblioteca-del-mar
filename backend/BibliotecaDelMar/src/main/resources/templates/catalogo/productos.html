@@ -60,23 +60,21 @@
                 <tr>
                     <th scope="col" class="identificadorT">#</th>
                     <th colspan="2" scope="col" class="text-center tituloT">Título</th>
+                    <th scope="col" class="detallesT">Tipo</th>
                     <th scope="col" class="detallesT">Saga</th>
-                    <th scope="col" class="detallesT">Género</th>
                     <th scope="col" class="detallesT">Autor</th>
-                    <th scope="col" class="detallesT">Año</th>
-                    <th scope="col" class="detallesT">Reservar</th>
+                    <th scope="col" class="detallesT">Páginas</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="anchoTabla">
-                    <th scope="row">1</th>
-                        <td><img src="../../img/libro.jpg" alt="libro" class="tablaLibro"></td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>Romance</td>
+                <tr class="anchoTabla" th:each="libro : ${libros}">
+                    <th scope="row" th:text="${libro.idLibro}"></th>
+                        <td><img th:src="@{/img/{img} (img=${libro.imagen})}" alt="libro" class="tablaLibro"></td>
+                        <td th:text="${libro.titulo}"></td>
+                        <td th:text="${libro.tipo}"></td>
+                        <td th:text="${libro.saga}"></td>
                         <td>@mdo</td>
-                        <td>Mark</td>
-                        <td><i class="far fa-heart"></i></td>
+                        <td th:text="${libro.paginas}"></td>
                         <td>
                             <a  href="#!" role="button">
                                 <i class="fas fa-edit"> </i> edit
@@ -84,66 +82,6 @@
                         </td>
                         <td>
                             <a  href="#!" role="button" >
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr class="anchoTabla">
-                    <th scope="row">2</th>
-                        <td><img src="../../img/libro2.jpg" alt="libro2" class="tablaLibro"></td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>Romance</td>
-                        <td>@fat</td>
-                        <td>Mark</td>
-                        <td><i class="far fa-heart"></i></td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr class="anchoTabla">
-                    <th scope="row">3</th>
-                        <td><img src="../../img/libro3.jpg" alt="libro3" class="tablaLibro"></td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>Aventura</td>
-                        <td>@twitter</td>
-                        <td>Mark</td>
-                        <td><i class="far fa-heart"></i></td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr class="anchoTabla">
-                    <th scope="row">4</th>
-                        <td><img src="../../img/libro4.jpg" alt="libro4" class="tablaLibro"></td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>Ficcion</td>
-                        <td>@twitter</td>
-                        <td>Mark</td>
-                        <td><i class="far fa-heart"></i></td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button">
                                 <i class="fas fa-backspace"> </i> delete
                             </a>
                         </td>

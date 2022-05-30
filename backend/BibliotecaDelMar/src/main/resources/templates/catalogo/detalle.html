@@ -43,11 +43,8 @@
                 <div class="cardDetalle text-center mt-4 vh-80 align-items-center">
                     <div class="card-header "><em>Autor:</em></div>
                         <div class="card-body">
-                            <h5 class="card-title"><span th:text="${libro.titulo}"></span></h5>
-                            <p class="card-text ">
-                                This is a longer card with supporting text below as a natural lead-in to
-                                additional content. This content is a little bit longer.
-                            </p>
+                            <h5 class="card-title"><span th:text="${libro.titulo}"></span> ( <em><span th:text="${libro.tipo}"></span></em>  )</h5>
+                            <p class="card-text">Saga: <span th:text="${libro.saga}"></span></p>
                         </div>
                         <div class="card-footer">
                             <a class="btn botonCard" type="button" href="#"><i class="bi bi-bookmark-plus"> Reservar </i></a>
@@ -81,8 +78,9 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="detalles">
-                <h4 class="mt-2 lead fw-bold">Detalles del producto</h4>
-                <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                <h4 class="mt-2 lead fw-bold">Resumen</h4>
+               	<p th:text="${libro.descripcion}"></p>
+               	<p>Número de páginas: <span th:text="${libro.paginas}"></span></p>
             </div>
             <div class="tab-pane fade" id="autor">
                 <h4 class="mt-2 lead fw-bold">Sobre el autor</h4>

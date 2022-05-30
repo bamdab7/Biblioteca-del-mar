@@ -44,11 +44,6 @@ public class LibroService implements ILibroService {
 		repoLibros.deleteById(idLibro);
 		
 	}
-	//este metodo es el paginador
-	@Override
-	public Page<Libro> buscarTodosLibros(Pageable page) {
-		return repoLibros.findAll(page);
-	}
 	
 
 }

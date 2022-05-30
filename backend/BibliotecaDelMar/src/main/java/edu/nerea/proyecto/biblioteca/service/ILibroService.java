@@ -14,6 +14,4 @@ public interface ILibroService {
 	void guardarLibro(Libro libro);
 	Libro buscarPorId(Integer idLibro);
 	void eliminar (Integer idLibro);
-		//esto paginará lo que listaremos en el findAll()
-	Page<Libro> buscarTodosLibros(Pageable page);
 } 

@@ -165,7 +165,10 @@ body{
   background-color: rgb(113, 143, 148,0.4);
     border-radius: 5px;
 }
-  
+ 	/*estilo imagen detalle libro, ajuste de tamaño*/
+.productoDetalle{
+	 width: 250px;
+ }
 .note-warning {
     border-color: rgba(241, 182, 114, 0.74);
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,10 +27,12 @@ public class LibroController {
 		model.addAttribute("libros", lista);
 		return "catalogo/productos.html";
 	}
-	//metodo guardar libros
-	/*@PostMapping("/addLibro")
-	public Libro guardarLibro(@RequestBody Libro libro) {
-		return serviceLibros.guardarLibro(libro);
+	
+		//esta ruta nos mostrara en detalle el producto que filtraremos por el id
+	@GetMapping("/detalle/{id}")
+	public String verDetalle(@PathVariable("id") int idLibro,Model model) {
+		Libro libro= serviceLibros.buscarPorId(idLibro);
+		model.addAttribute("libro", libro);
+		return "catalogo/detalle.html";
 	}
-	*/
 }

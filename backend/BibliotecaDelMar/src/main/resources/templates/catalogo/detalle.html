@@ -89,10 +89,11 @@
             </div>
             <div class="tab-pane fade" id="more">
                 <h4 class="mt-2 lead fw-bold">La editorial</h4>
-                
-                <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
-                <p>Tempus pharetra congue pretium accumsan molestie ut nulla sociosqu a, suspendisse dui euismod montes vulputate quam potenti mollis. Sagittis pulvinar consequat class blandit, neque venenatis dignissim inceptos cubilia, lobortis vestibulum fames. Vulputate dis erat interdum dictumst lectus porta metus id nunc enim platea, habitasse pellentesque mi conubia habitant neque gravida consequat sapien taciti lacinia, malesuada class convallis mattis mus aptent nostra blandit sodales facilisi.</p>
-                <p>Tempus pharetra congue pretium accumsan molestie ut nulla sociosqu a, suspendisse dui euismod montes vulputate quam potenti mollis. Sagittis pulvinar consequat class blandit, neque venenatis dignissim inceptos cubilia, lobortis vestibulum fames. Vulputate dis erat interdum dictumst lectus porta metus id nunc enim platea, habitasse pellentesque mi conubia habitant neque gravida consequat sapien taciti lacinia, malesuada class convallis mattis mus aptent nostra blandit sodales facilisi.</p>
+                <p>Nombre de la editorial: <span th:text="${libro.editorial.nombre}"></span></p>
+                <p>Año de fundación: <span th:text="${libro.editorial.fundacion}"></span></p>
+                <p>Localización:  <span th:text="${libro.editorial.direcionSede}"></span></p>
+         		<!-- <span th:if="${libro.editorial.url}" ? th:text="${libro.editorial.url}" : "" ></span> -->
+
             </div>
         </div>
     </div>

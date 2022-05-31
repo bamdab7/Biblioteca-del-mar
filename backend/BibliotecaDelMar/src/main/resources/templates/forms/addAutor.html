@@ -17,7 +17,7 @@
     <link href="../../index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <title>Añadir producto</title>
+    <title>Añadir autor</title>
 </head>
  <!-- Header -->
  <header>
@@ -60,62 +60,35 @@
       <div class="container"> 
 
         <div class="card">
-          <h4 class="card-header"><strong>Datos del producto</strong></h4>              
+          <h4 class="card-header"><strong>Datos del autor</strong></h4>              
           <div class="card-body">
-            <form th:action="@{/productos/save}" method="post" th:object="${libro}" enctype="multipart/form-data">    
+            <form th:action="@{/autor/save}" method="post" th:object="${autor}" enctype="multipart/form-data">    
               <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
                    	<input type="hidden" th:field="*{id}">
                    	<input type= "hidden" th:field="*{imagen}">
-                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="Titulo del producto a añadir" required="required">
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="" required="required">
                   </div>
                 </div>
-                <div class="col-md-9"> 
+                <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="descripcion">Saga</label>
-                    <input type="text" class="form-control" th:field="*{saga}" id="saga" name="saga" placeholder="Si no existe, dejar en blanco">
+                    <label for="descripcion">Apellidos</label>
+                    <input type="text" class="form-control" th:field="*{apellido}" id="apellido" name="apellido" placeholder="" required="required">
                   </div> 
                 </div>    
               </div>    
               <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">
-                    <label for="autor">Autor</label>
-                    <select class="form-control" th:field="*{autor.id}">
-                      <option th:each="categoria : ${autores}" th:value="${autor.id}" th:text="${autor.nombre}"></option>
+                    <label for="estatus">Estado del autor</label>
+                    <select class="form-control" th:field="*{status}" name="estatus" id="estatus">
+                        <option value="Activo">Activo</option>
+                        <option value="Noactivo">No activo</option>	
                     </select>
                   </div>
                 </div>
-
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="estatus">Tipo de producto</label>
-                    <select class="form-control" th:field="*{tipo}" name="estatus" id="estatus">
-                        <option value="Libro">Libro</option>
-                        <option value="Enciclopedia">Enciclopedia</option>
-                        <option value="Revista">Revista</option>	
-                        <option value="CD">CD</option>	
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3"> 
-                   <div class="form-group">
-                    <label for="editorial">Editorial/Distribuidora</label>
-                    <select class="form-control" th:field="*{editorial.idEditorial}">
-                      <option th:each="editorial : ${editoriales}" th:value="${editorial.idEditorial}" th:text="${editorial.nombre}"></option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="paginas">Número de páginas</label>
-                    <input type="text" class="form-control" th:field="*{paginas}" name="paginas" id="paginas" placeholder="Número de páginas">
-                  </div>
-                </div>
-              </div>    
-              <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="archivoImagen">Imagen</label>
@@ -125,18 +98,16 @@
               </div> 
               <hr>
               <div class="row">
-                <div class="col-md-9"> 
-                  <div class="form-group">
-                    <label for="descripcion"><strong>Resumen del producto </strong></label>          
-                    <textarea class="form-control" th:field="*{descripcion}" name="descripcion" id="descripcion" rows="7"></textarea>
-                  </div> 
-                </div> 
                 <div class="col-md-3">
                   <label for="imagen">Prev. imagen</label>
-                  <img class="rounded mx-auto d-block" th:src="@{/img/{img} (img=${libro.imagen}) }" alt="Imagen del producto" width="200" height="200">            
+                  <img class="rounded mx-auto d-block" th:src="@{/img/{img} (img=${autor.imagen}) }" alt="Fotografia del autor" width="200" height="200">            
                 </div>
+                
               </div> 
-              <button type="submit" class="btn btn-primary">Guardar</button>  
+              <div class="col-md-3"> 
+                <button type="submit" class="btn btn-primary">Guardar</button> 
+              </div>
+            </div>    
             </form>
           </div>
         </div>

@@ -77,15 +77,15 @@
                         </td>
                         <td th:text="${libro.tipo}"></td>
                         <td th:text="${libro.saga}"></td>
-                        <td>@mdo</td>
+                        <td th:text="${libro.autor.nombre}"></td> <!--revisar-->
                         <td th:text="${libro.paginas}"></td>
                         <td>
-                            <a  href="#!" role="button">
+                            <a  href="#!" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
                                 <i class="fas fa-edit"> </i> edit
                             </a>
                         </td>
                         <td>
-                            <a  href="#!" role="button" >
+                            <a  th:href="@{/elimarLibro/{id} (id=${libro.idLibro}) }" role="button" >
                                 <i class="fas fa-backspace"> </i> delete
                             </a>
                         </td>

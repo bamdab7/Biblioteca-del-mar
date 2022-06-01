@@ -49,7 +49,7 @@
     <div class="tablaProductos table-responsive">
         <table class="table table-striped caption-top align-middle">
             <caption>
-                <a  href="../forms/addLibro.html" role="button" class="btn btn-outline-success">
+                <a th:href="@{/añadirAutor}" role="button" class="btn btn-outline-success">
                     <i class="fas fa-plus"></i> Registrar nuevo autor
                 </a>
             </caption>
@@ -69,7 +69,7 @@
                         <td th:text="${autor.apellidos}"></td>
                         <td th:text="${autor.status}"></td> <!--revisar-->
                         <td>
-                            <a  href="#!" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
+                            <a  th:href="@{/editAutor/{id} (id=${autor.idAutor}) }" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
                                 <i class="fas fa-edit"> </i> edit
                             </a>
                         </td>

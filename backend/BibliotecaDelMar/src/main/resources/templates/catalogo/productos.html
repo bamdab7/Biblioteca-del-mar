@@ -52,9 +52,16 @@
     <div class="tablaProductos table-responsive">
         <table class="table table-striped caption-top align-middle">
             <caption>
-                <a  href="../forms/addLibro.html" role="button" class="btn btn-outline-success">
-                    <i class="fas fa-plus"></i> añadir nuevo libro
-                </a>
+                <div>
+        <!--FALTA--><a  th:href="@{/añadirLibro}" role="button" class="btn btn-outline-success">
+                        <i class="fas fa-plus"></i> añadir nuevo libro
+                    </a>
+                </div>
+                <div> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
+                    <a th:href="@{/autores}" role="button" class="btn btn-outline-success">
+                        <i class="fas fa-plus"></i> Listado de autores disponibles
+                    </a>
+                </div>
             </caption>
             <thead>
                 <tr>
@@ -80,12 +87,12 @@
                         <td th:text="${libro.autor.nombre}"></td> <!--revisar-->
                         <td th:text="${libro.paginas}"></td>
                         <td>
-                            <a  href="#!" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
+                            <a th:href="@{/editLibro/{id} (id=${libro.idLibro}) }" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
                                 <i class="fas fa-edit"> </i> edit
                             </a>
                         </td>
                         <td>
-                            <a  th:href="@{/elimarLibro/{id} (id=${libro.idLibro}) }" role="button" >
+                            <a  th:href="@{/eliminarLibro/{id} (id=${libro.idLibro}) }" role="button" >
                                 <i class="fas fa-backspace"> </i> delete
                             </a>
                         </td>

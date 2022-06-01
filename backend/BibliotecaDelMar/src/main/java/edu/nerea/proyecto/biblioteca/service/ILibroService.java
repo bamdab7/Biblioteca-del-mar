@@ -2,9 +2,6 @@ package edu.nerea.proyecto.biblioteca.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 import edu.nerea.proyecto.biblioteca.entity.Libro;
 
 public interface ILibroService {

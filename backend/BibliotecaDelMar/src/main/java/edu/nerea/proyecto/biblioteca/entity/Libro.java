@@ -23,13 +23,13 @@ public class Libro {
 	private String titulo;
 	private String tipo; //enumerado LIBRO, REVISTA, ENCICLOPEDIA,CD
 	private String saga;
-	@OneToOne
+	@OneToOne //relacion N-1 con tabla editorial
 	@JoinColumn(name="idEditorial",referencedColumnName="idEditorial")
 	private Editorial editorial;
 	private Integer paginas;
 	private String descripcion;
 	private String imagen;
-	@ManyToMany(fetch=FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER) //relacion N-N con tabla autores
 	@JoinTable(name="libroAutor",
 				joinColumns= @JoinColumn(name="idLibro"),
 				inverseJoinColumns = @JoinColumn(name="idAutor")

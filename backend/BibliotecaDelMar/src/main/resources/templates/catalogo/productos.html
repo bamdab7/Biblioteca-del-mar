@@ -86,7 +86,10 @@
                         </td>
                         <td th:text="${libro.tipo}"></td>
                         <td th:text="${libro.saga}"></td>
-                        <td th:text="${libro.autor.nombre}"></td> <!--revisar-->
+                        <td>
+                        	<span th:text="${libro.autor.nombre}"> </span>
+                        	<span th:text="${libro.autor.apellidos}"> </span>
+                         </td>
                         <td th:text="${libro.paginas}"></td>
                         <td>
                             <a th:href="@{/editLibro/{id} (id=${libro.idLibro}) }" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->

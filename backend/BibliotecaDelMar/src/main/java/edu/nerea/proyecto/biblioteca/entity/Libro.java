@@ -29,25 +29,16 @@ public class Libro {
 	private Integer paginas;
 	private String descripcion;
 	private String imagen;
-	@ManyToMany(fetch=FetchType.EAGER) //relacion N-N con tabla autores
-	@JoinTable(name="libroAutor",
-				joinColumns= @JoinColumn(name="idLibro"),
-				inverseJoinColumns = @JoinColumn(name="idAutor")
-			)
-	private List<Autor> autores;
+	@OneToOne
+	@JoinColumn(name="idAutor", referencedColumnName="idAutor")
+	private Autor autor;
+	
 	
 	public Libro() {
 		super();
 	}
 	
-	public List<Autor> getAutores() {
-		return autores;
-	}
-
-	public void setAutores(List<Autor> autores) {
-		this.autores = autores;
-	}
-
+	
 	public Integer getIdLibro() {
 		return idLibro;
 	}
@@ -111,6 +102,15 @@ public class Libro {
 	public void setEditorial(Editorial editorial) {
 		this.editorial = editorial;
 	}
+	
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
 
 	@Override
 	public String toString() {

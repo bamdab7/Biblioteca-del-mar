@@ -44,7 +44,6 @@
             <h1 class="fw-light">Listado de libros</h1>
             <p class="lead text-muted">¡Bienvenidos a nuestra biblioteca!. Pueden reservar nuestros libros desde aquí y se los enviamos a casa.</p>
             <p class="lead text-muted">Plazo de devolución de los libros : <strong>15</strong> dias</p>
-            <p class="lead text-muted">Contamos con un total de : <strong>45</strong> libros</p>
         </div>
         </div>
     </section>
@@ -54,16 +53,18 @@
        <div th:if="${mgs != null}" class="alert" th:text="${msg}" role="alert"></div>
         <table class="table table-striped caption-top align-middle">
             <caption>
-                <div>
-        <!--FALTA--><a  th:href="@{/añadirLibro}" role="button" class="btn btn-outline-success">
-                        <i class="fas fa-plus"></i> añadir nuevo libro
-                    </a>
-                </div>
-                <div> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
-                    <a th:href="@{/autores}" role="button" class="btn btn-outline-success">
-                        <i class="fas fa-plus"></i> Listado de autores disponibles
-                    </a>
-                </div>
+	            <div class="row">
+	                <div class="col-3"> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
+	     				<a  th:href="@{/añadirLibro}" role="button" class="btn btn-outline-success">
+	                        <i class="fas fa-plus"></i> añadir nuevo libro
+	                    </a>
+	                </div>
+	                <div class="col-9"> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
+	                    <a th:href="@{/autores}" role="button" class="btn btn-outline-primary">
+	                         Listado de autores disponibles
+	                    </a>
+	                </div>
+	            </div>    
             </caption>
             <thead>
                 <tr>

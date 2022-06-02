@@ -69,8 +69,13 @@
                         <td th:text="${autor.apellidos}"></td>
                         <td th:text="${autor.status}"></td> <!--revisar-->
                         <td>
-                            <a  th:href="@{/editAutor/{id} (id=${autor.idAutor}) }" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
+                            <a th:href="@{/editAutor/{id} (id=${autor.idAutor}) }" role="button">
                                 <i class="fas fa-edit"> </i> edit
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{/eliminarAutor/{id} (id=${autor.idAutor}) }" role="button" onclick="return confirm('Va a eliminar un autor, ¿está seguro?' )" title="Eliminar autor" > 
+                                <i class="fas fa-delete" aria-hidden="true"> </i> delete
                             </a>
                         </td>
                 </tr>

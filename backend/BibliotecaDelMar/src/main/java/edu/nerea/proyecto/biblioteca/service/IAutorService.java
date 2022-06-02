@@ -9,7 +9,7 @@ public interface IAutorService {
     List<Autor> buscarTodosAutores();
     void guardarAutor(Autor autor);
     Autor buscarPorId(Integer idAutor);
-    void eliminarAutor(Integer idAutor);
+    void eliminarAutor(Integer idAutor); //metodo que elimina por el id del autor
     //editar autor
 
 }

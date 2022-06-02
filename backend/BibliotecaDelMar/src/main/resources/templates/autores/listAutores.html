@@ -25,6 +25,7 @@
         />
         <link th:href="@{/index.css}"  rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> <!--link para habilitar los iconos de boostrap-->
+      <title>Listado autores</title>
 </head> 
 
 <!-- Header -->
@@ -36,6 +37,7 @@
         <nav aria-label="breadcrumb" class= "card-header">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a th:href="@{/inicio}">Inicio</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/libros}">Catálogo</a></li>
               <li class="breadcrumb-item active" aria-current="page">Autores</li>
             </ol>
           </nav>
@@ -48,17 +50,18 @@
     <div th:if="${mgs != null}" class="alert" th:text="${msg}" role="alert"></div>
     <div class="tablaProductos table-responsive">
         <table class="table table-striped caption-top align-middle">
-            <caption>
-                <a th:href="@{/añadirAutor}" role="button" class="btn btn-outline-success">
+            <caption> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
+                <a th:href="@{/createAutor}" role="button" class="btn btn-outline-success">
                     <i class="fas fa-plus"></i> Registrar nuevo autor
                 </a>
             </caption>
             <thead>
                 <tr>
-                    <th scope="col" class="identificadorT">#</th>
-                    <th scope="col" class="detallesT">Nombre</th>
-                    <th scope="col" class="detallesT">Apellidos</th>
-                    <th scope="col" class="detallesT">Status</th>
+                    <th scope="col">#</th>
+                    <th scope="col"></th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>

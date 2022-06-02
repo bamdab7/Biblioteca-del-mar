@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.nerea.proyecto.biblioteca.entity.Autor;
@@ -31,7 +34,19 @@ public class AutorController {
         model.addAttribute("autor", autor);
         return "forms/addAutor.html";
     }
+    @PostMapping("/saveAutor") //BindingResult para capturar los errores de conversion del formulario
+	public String crearAutor(Autor autor,BindingResult result, RedirectAttributes attributes){
+		if(result.hasErrors()){
+			for(ObjectError error : result.getAllErrors()){
+				System.out.println("Error: " + error.getDefaultMessage());
+			} //nos informa que error se esta cometiendo y nos devuelve al formulario
+			return "autores/listAutores.html";
+		}
 
+		serviceAutor.guardarAutor(autor);
+		attributes.addFlashAttribute ("msg", "Se ha guardado el autor");
+		return "catalogo/productos.html";
+	}
     @GetMapping("/createAutor")
     public String crearAutor(Autor autor){
         return "forms/addAutor.html";

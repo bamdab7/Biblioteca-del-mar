@@ -47,15 +47,15 @@
         <div class="carousel-item">
           <img class="imgCarrousel img-fluid d-block w-100" th:src="@{img/CharlasDebates.png}" alt="paisaje" > <!--ajustar tamaño-->
           <div class="carousel-caption d-none d-md-block mask" style="background-color: rgba(0, 0, 0, 0.6);">
-            <h3><a class="linkCarousel" href="../historia/sobre biblioteca.html">¡Conoce más sobre nuestra historia!</a></h3>
-              <p><a class="linkCarousel" href="../historia/sobre biblioteca.html">Clica aquí para más información</a></p>
+            <h3><a class="linkCarousel" th:href="@{/aboutus}">¡Conoce más sobre nuestra historia!</a></h3>
+              <p><a class="linkCarousel" th:href="@{/aboutus}">Clica aquí para más información</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="imgCarrousel img-fluid d-block w-100" th:src="@{img/Clubdelectura.png}"  alt="solsticio" >
           <div class="carousel-caption d-none d-md-block mask" style="background-color: rgba(0, 0, 0, 0.6);">
-            <h3><a class="linkCarousel" href="../catalogo/productos.html">Nuestro catálogo, lo mejor sobre el mar</a></h3>
-              <p><a class="linkCarousel" href="../catalogo/productos.html">Clica aquí para más información</a></p>
+            <h3><a class="linkCarousel" th:href="@{/libros}">Nuestro catálogo, lo mejor sobre el mar</a></h3>
+              <p><a class="linkCarousel" th:href="@{/libros}">Clica aquí para más información</a></p>
           </div>
         </div>
       </div>

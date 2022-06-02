@@ -97,8 +97,8 @@
                             </a>
                         </td>
                         <td>
-                            <a  th:href="@{/eliminarLibro/{id} (id=${libro.idLibro}) }" role="button" >
-                                <i class="fas fa-backspace"> </i> delete
+                            <a  th:href="@{/eliminarLibro/{id} (id=${libro.idLibro}) }" role="button" onclick="return confirm('¿Desea eliminarlo?')" title="Eliminar producto">
+                                <i class="fas fa-backspace" aria-hidden="true"> </i> delete
                             </a>
                         </td>
                 </tr>

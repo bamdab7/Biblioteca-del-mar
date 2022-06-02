@@ -10,5 +10,5 @@ public interface ILibroService {
 	List<Libro> buscarTodosLibros();
 	void guardarLibro(Libro libro);
 	Libro buscarPorId(Integer idLibro);
-	void eliminar (Integer idLibro);
+	void eliminar (Integer idLibro); //al metodo eliminar le pasaremos el id del libro a eliminar
 } 

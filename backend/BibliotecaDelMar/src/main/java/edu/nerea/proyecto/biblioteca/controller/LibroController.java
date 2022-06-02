@@ -68,9 +68,10 @@ public class LibroController {
 	}
 
 	@GetMapping("/eliminarLibro/{id}")
-	public String eliminarLibro(@RequestParam("id") int idLibro, Model model){
-		model.addAttribute("libro", idLibro);
-		return null;
+	public String eliminarLibro(@RequestParam("id") int idLibro, RedirectAttributes attributes){
+		serviceLibros.eliminar(idLibro);
+		attributes.addFlashAttribute("msg", "Ha eliminado el producto"); //añadiendo mensaje que muestra info al usuario de acciones
+		return "redirect:/catalogo/productos.html"; //redireccionamiento al listado de los productos
 	}
 
 	//pageable

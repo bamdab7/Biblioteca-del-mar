@@ -39,7 +39,7 @@ public class LibroService implements ILibroService {
 	//metodo que elimina los libros (solo disponible para administradores)
 	@Override
 	public void eliminar(Integer idLibro) {
-		repoLibros.deleteById(idLibro);
+		repoLibros.deleteById(idLibro); //método predefinido
 		
 	}
 	

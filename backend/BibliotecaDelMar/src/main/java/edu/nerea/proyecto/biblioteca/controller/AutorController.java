@@ -36,16 +36,18 @@ public class AutorController {
     }
     @PostMapping("/saveAutor") //BindingResult para capturar los errores de conversion del formulario
 	public String crearAutor(Autor autor,BindingResult result, RedirectAttributes attributes){
+    	
 		if(result.hasErrors()){
 			for(ObjectError error : result.getAllErrors()){
 				System.out.println("Error: " + error.getDefaultMessage());
 			} //nos informa que error se esta cometiendo y nos devuelve al formulario
-			return "autores/listAutores.html";
+			
+			return "forms/addAutor.html";
 		}
 
 		serviceAutor.guardarAutor(autor);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el autor");
-		return "forms/addAutor.html";
+		return "redirect:/autores/listAutores.html";
 	}
     @GetMapping("/createAutor")
     public String crearAutor(Autor autor){

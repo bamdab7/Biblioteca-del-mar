@@ -57,14 +57,12 @@ public class LibroController {
 
 		serviceLibros.guardarLibro(libro);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el producto correctamente");
-		return "catalogo/productos.html";
+		return "redirecatalogo/productos.html";
 	}
 
 		//esta ruta nos permitira crear productos FALTA IMAGEN Y AUTOR Y EDITORIAL
 	@GetMapping("/createLibro")
-	public String crearLibro(Libro libro, Model model, RedirectAttributes attributes){
-		model.addAttribute("libros", serviceLibros.buscarTodosLibros());
-		//attributes.addFlashAttribute("msg", "Producto guardado");
+	public String crearLibro(Libro libro){
 		return "forms/addLibro.html";
 	}
 		//el metodo editar recoge el id que seleccionamos, muestra todos los datos en un formulario, editaremos y actualizaremos

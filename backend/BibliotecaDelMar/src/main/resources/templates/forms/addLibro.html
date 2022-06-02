@@ -40,7 +40,7 @@
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
-                   	<input type="hidden" th:field="*{idLibro}">
+                   	<input type="hidden" th:field="*{idLibro}"> <!--a la hora de actualizar conservamos tanto la imagen como el id del producto-->
                    	<input type= "hidden" th:field="*{imagen}">
                     <input type="text" class="form-control" th:field="*{titulo}" id="titulo" name="titulo" placeholder="Titulo del producto a añadir" required="required">
                   </div>

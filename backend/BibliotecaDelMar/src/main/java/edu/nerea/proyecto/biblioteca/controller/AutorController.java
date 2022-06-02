@@ -31,6 +31,15 @@ public class AutorController {
         model.addAttribute("autor", autor);
         return "forms/addAutor.html";
     }
+
+    @GetMapping("/createAutor")
+    public String crearAutor(Autor autor){
+        return "forms/addAutor.html";
+    }
+
+    ///saveAutor
+
+
         //metodo eliminar autor
     @GetMapping("/eliminarAutor/{id}")
     public String eliminar(@PathVariable("id") int idAutor, RedirectAttributes attributes){

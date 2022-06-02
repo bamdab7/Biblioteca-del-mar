@@ -8,12 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.nerea.proyecto.biblioteca.entity.Libro;
+import edu.nerea.proyecto.biblioteca.service.IAutorService;
+import edu.nerea.proyecto.biblioteca.service.IEditorialService;
 import edu.nerea.proyecto.biblioteca.service.ILibroService;
 
 @Controller //cambiar a controller al mostrar vistas html (restcontroller, controller)
@@ -21,6 +24,11 @@ public class LibroController {
 
 	@Autowired
 	private ILibroService serviceLibros;
+	@Autowired
+	private IEditorialService serviceEditorial;
+	@Autowired
+	private IAutorService serviceAutor;
+
 	
 		//esta ruta nos mostrara un listado de los libros (tabla)
 	@GetMapping("/libros")
@@ -38,12 +46,6 @@ public class LibroController {
 		return "catalogo/detalle.html";
 	}
 
-		//esta ruta nos permitira crear productos FALTA IMAGEN Y AUTOR Y EDITORIAL
-	@GetMapping("/createLibro")
-	public String crearLibro(){
-		return "forms/addLibro.html";
-	}
-
 	@PostMapping("/saveLibro") //BindingResult para capturar los errores de conversion del formulario
 	public String crearLibro(Libro libro,BindingResult result, RedirectAttributes attributes){
 		if(result.hasErrors()){
@@ -52,14 +54,20 @@ public class LibroController {
 			} //nos informa que error se esta cometiendo y nos devuelve al formulario
 			return "form/addLibro.html";
 		}
+
 		serviceLibros.guardarLibro(libro);
-	//	List<Libro> lista = serviceLibros.buscarTodosLibros();
-	//	model.addAttribute("libros", lista); //asi una vez guardado pille los libros y los liste
 		attributes.addFlashAttribute ("msg", "Se ha guardado el producto correctamente");
 		return "catalogo/productos.html";
 	}
 
-		//a revisar
+		//esta ruta nos permitira crear productos FALTA IMAGEN Y AUTOR Y EDITORIAL
+	@GetMapping("/createLibro")
+	public String crearLibro(Libro libro, Model model, RedirectAttributes attributes){
+		model.addAttribute("libros", serviceLibros.buscarTodosLibros());
+		//attributes.addFlashAttribute("msg", "Producto guardado");
+		return "forms/addLibro.html";
+	}
+		//el metodo editar recoge el id que seleccionamos, muestra todos los datos en un formulario, editaremos y actualizaremos
 	@GetMapping("/editLibro/{id}")
 	public String editLibro(@PathVariable("id") int idLibro,Model model){
 		Libro libro=serviceLibros.buscarPorId(idLibro);
@@ -74,5 +82,11 @@ public class LibroController {
 		return "redirect:/catalogo/productos.html"; //redireccionamiento al listado de los productos
 	}
 
+	@ModelAttribute //cada metodo del controlador endra informacion de editoriales y autores, asi nos evitamos insertarla cada vez EL MODEL TENDRA INFO
+	public void setGenericos(Model model){
+		model.addAttribute("editoriales", serviceEditorial.buscarTodasEditoriales());
+		model.addAttribute("autores", serviceAutor.buscarTodosAutores());
+	}
+	
 	//pageable
 }

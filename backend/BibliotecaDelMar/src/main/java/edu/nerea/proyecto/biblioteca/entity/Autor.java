@@ -17,9 +17,6 @@ public class Autor {
 	private String apellidos;
 	private String status; //ACTIVO // NO ACTIVO
 	private String imagen;
-	
-	
-	
 	public Integer getIdAutor() {
 		return idAutor;
 	}
@@ -55,5 +52,7 @@ public class Autor {
 		return "Autor [idAutor=" + idAutor + ", nombre=" + nombre + ", apellidos=" + apellidos + ", status=" + status
 				+ ", imagen=" + imagen + "]";
 	}
+	
+	
 	
 }

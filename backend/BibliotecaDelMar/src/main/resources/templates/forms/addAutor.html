@@ -33,7 +33,7 @@
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
-                   	<input type="hidden" th:field="*{id}">
+                   	<input type="hidden" th:field="*{idAutor}">
                    	<input type= "hidden" th:field="*{imagen}">
                     <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="" required="required">
                   </div>
@@ -41,7 +41,7 @@
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="descripcion">Apellidos</label>
-                    <input type="text" class="form-control" th:field="*{apellido}" id="apellido" name="apellido" placeholder="" required="required">
+                    <input type="text" class="form-control" th:field="*{apellidos}" id="apellido" name="apellido" placeholder="" required="required">
                   </div> 
                 </div>    
               </div>    
@@ -67,19 +67,17 @@
                 <div class="col-md-3">
                   <label for="imagen">Prev. imagen</label>
                   <img class="rounded mx-auto d-block" th:src="@{/img/{img} (img=${autor.imagen}) }" alt="Fotografia del autor" width="200" height="200">            
-                </div>
-                
+                </div>           
               </div> 
               <div class="col-md-3"> 
                 <button type="submit" class="btn btn-primary">Guardar</button> 
               </div>
-            </div>    
-            </form>
-          </div>
-        </div>
-      </div> <!-- /container -->
-    </main>
-  </body>
+              </form>
+           </div>    
+         </div>
+     </div> <!-- /container -->
+   </main>
+</body>
   
   <div class="b-example-divider"></div>
   <footer th:insert="fragments/footer" class="text-center text-lg-start bg-light text-muted" ></footer>

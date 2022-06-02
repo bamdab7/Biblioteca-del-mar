@@ -45,7 +45,7 @@ public class AutorController {
 
 		serviceAutor.guardarAutor(autor);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el autor");
-		return "catalogo/productos.html";
+		return "forms/addAutor.html";
 	}
     @GetMapping("/createAutor")
     public String crearAutor(Autor autor){

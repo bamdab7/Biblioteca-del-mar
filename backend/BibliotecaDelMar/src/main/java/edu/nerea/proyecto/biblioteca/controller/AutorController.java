@@ -1,5 +1,10 @@
 package edu.nerea.proyecto.biblioteca.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +15,8 @@ import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.nerea.proyecto.biblioteca.entity.Autor;
@@ -35,7 +42,7 @@ public class AutorController {
         return "forms/addAutor.html";
     }
     @PostMapping("/saveAutor") //BindingResult para capturar los errores de conversion del formulario
-	public String crearAutor(Autor autor,BindingResult result, RedirectAttributes attributes){
+	public String crearAutor(Autor autor,BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile imagen)throws IOException{
     	
 		if(result.hasErrors()){
 			for(ObjectError error : result.getAllErrors()){
@@ -44,7 +51,16 @@ public class AutorController {
 			
 			return "forms/addAutor.html";
 		}
+		InputStream initialStream = imagen.getInputStream();
+        byte[] buffer = new byte[initialStream.available()];
+        initialStream.read(buffer);
 
+        File file = new File("src/main/resources/static/img/imagen" + autor.getIdAutor() + ".jpg"); //guardamos la imagen
+
+        try (OutputStream outStream = new FileOutputStream(file)) {
+            outStream.write(buffer);
+        }
+        autor.setImagen(autor.getIdAutor()+ ".jpg");
 		serviceAutor.guardarAutor(autor);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el autor");
 		return "redirect:/autores";

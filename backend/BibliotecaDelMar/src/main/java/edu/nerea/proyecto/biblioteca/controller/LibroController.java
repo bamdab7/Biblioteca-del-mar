@@ -1,5 +1,10 @@
 package edu.nerea.proyecto.biblioteca.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.nerea.proyecto.biblioteca.entity.Libro;
@@ -47,20 +53,29 @@ public class LibroController {
 	}
 
 	@PostMapping("/saveLibro") //BindingResult para capturar los errores de conversion del formulario
-	public String crearLibro(Libro libro,BindingResult result, RedirectAttributes attributes){
+	public String crearLibro(Libro libro,BindingResult result, RedirectAttributes attributes, @RequestParam("archivoImagen") MultipartFile imagen) throws IOException{
 		if(result.hasErrors()){
 			for(ObjectError error : result.getAllErrors()){
 				System.out.println("Error: " + error.getDefaultMessage());
 			} //nos informa que error se esta cometiendo y nos devuelve al formulario
 			return "form/addLibro.html";
 		}
+		//System.out.println(imagen);
+		InputStream initialStream = imagen.getInputStream();
+        byte[] buffer = new byte[initialStream.available()];
+        initialStream.read(buffer);
 
+        File file = new File("src/main/resources/static/img/imagen" + libro.getIdLibro() + ".jpg"); //guardamos la imagen
+
+        try (OutputStream outStream = new FileOutputStream(file)) {
+            outStream.write(buffer);
+        }
+        libro.setImagen(libro.getIdLibro() + ".jpg");
 		serviceLibros.guardarLibro(libro);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el producto correctamente");
 		return "redirect:/libros";
 	}
 
-		//esta ruta nos permitira crear productos FALTA IMAGEN Y AUTOR Y EDITORIAL
 	@GetMapping("/createLibro")
 	public String crearLibro(Libro libro){
 		return "forms/addLibro.html";

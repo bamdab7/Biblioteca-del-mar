@@ -29,7 +29,7 @@ public class AutorController {
         return "autores/listAutores.html";
     }
     @GetMapping("/editAutor/{id}")
-    public String editAutor(@PathVariable("id") int idAutor, Model model){
+    public String editAutor(@PathVariable("id") Integer idAutor, Model model){
         Autor autor= serviceAutor.buscarPorId(idAutor);
         model.addAttribute("autor", autor);
         return "forms/addAutor.html";
@@ -47,7 +47,7 @@ public class AutorController {
 
 		serviceAutor.guardarAutor(autor);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el autor");
-		return "redirect:/autores/listAutores.html";
+		return "redirect:/autores";
 	}
     @GetMapping("/createAutor")
     public String crearAutor(Autor autor){
@@ -59,10 +59,10 @@ public class AutorController {
 
         //metodo eliminar autor
     @GetMapping("/eliminarAutor/{id}")
-    public String eliminar(@PathVariable("id") int idAutor, RedirectAttributes attributes){
+    public String eliminar(@PathVariable("id") Integer idAutor, RedirectAttributes attributes){
         serviceAutor.eliminarAutor(idAutor);
         attributes.addFlashAttribute("msg", "El autor fue eliminado");
-        return null;
+        return "redirect:/autores";
     }
 
 }

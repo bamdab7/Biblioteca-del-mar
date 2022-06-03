@@ -57,7 +57,7 @@ public class LibroController {
 
 		serviceLibros.guardarLibro(libro);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el producto correctamente");
-		return "redirecatalogo/productos.html";
+		return "redirect:/libros";
 	}
 
 		//esta ruta nos permitira crear productos FALTA IMAGEN Y AUTOR Y EDITORIAL
@@ -67,17 +67,17 @@ public class LibroController {
 	}
 		//el metodo editar recoge el id que seleccionamos, muestra todos los datos en un formulario, editaremos y actualizaremos
 	@GetMapping("/editLibro/{id}")
-	public String editLibro(@PathVariable("id") int idLibro,Model model){
+	public String editLibro(@PathVariable("id") Integer idLibro,Model model){
 		Libro libro=serviceLibros.buscarPorId(idLibro);
 		model.addAttribute("libro",libro);
 		return "forms/addLibro.html";
 	}
 
 	@GetMapping("/eliminarLibro/{id}")
-	public String eliminarLibro(@RequestParam("id") int idLibro, RedirectAttributes attributes){
+	public String eliminarLibro(@PathVariable("id") Integer idLibro, RedirectAttributes attributes){
 		serviceLibros.eliminar(idLibro);
 		attributes.addFlashAttribute("msg", "Ha eliminado el producto"); //añadiendo mensaje que muestra info al usuario de acciones
-		return "redirect:/catalogo/productos.html"; //redireccionamiento al listado de los productos
+		return "redirect:/libros"; //redireccionamiento al listado de los productos
 	}
 
 	@ModelAttribute //cada metodo del controlador endra informacion de editoriales y autores, asi nos evitamos insertarla cada vez EL MODEL TENDRA INFO

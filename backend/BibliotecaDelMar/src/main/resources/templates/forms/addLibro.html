@@ -63,7 +63,7 @@
                   <div class="form-group">
                     <label for="autor">Autor</label>
                     <select class="form-control" th:field="*{autor.idAutor}">
-                      <option th:each="autor : ${autor}" th:value="${autor.idAutor}" th:text="${autor.nombre}"></option>
+                      <option th:each="autor : ${autores}" th:value="${autor.idAutor}" th:text="${autor.nombre}"></option>
                     </select>
                   </div>
                 </div>
@@ -83,7 +83,7 @@
                    <div class="form-group">
                     <label for="editorial">Editorial/Distribuidora</label>
                     <select class="form-control" th:field="*{editorial.idEditorial}">
-                      <option th:each="editorial : ${editorial}" th:value="${editorial.idEditorial}" th:text="${editorial.nombre}"></option>
+                      <option th:each="editorial : ${editoriales}" th:value="${editorial.idEditorial}" th:text="${editorial.nombre}"></option>
                     </select>
                   </div>
                 </div>

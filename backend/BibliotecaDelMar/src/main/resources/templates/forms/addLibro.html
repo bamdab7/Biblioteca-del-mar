@@ -26,10 +26,17 @@
       <hr>
       <div class="container"> 
         <div class="card">
+          <nav aria-label="breadcrumb" class= "card-header">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a th:href="@{/inicio}">Inicio</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/libros}">Catálogo</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Añadir productos</li>
+            </ol>
+          </nav>
           <h4 class="card-header"><strong>Datos del producto</strong></h4>              
           <div class="card-body">
             <form th:action="@{/saveLibro}" method="post" th:object="${libro}" enctype="multipart/form-data">    
-              <div th:if="${#fields.hasErrors('*')}" class="alert alert-warning" role="alert">
+              <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger" role="alert">
                  <p>Existen errores al añadir el producto, porfavor revíselo: </p> 
                  <ul>
                    <li th:each="err : ${#fileds.errors('*')}" th:text="${err}"></li>

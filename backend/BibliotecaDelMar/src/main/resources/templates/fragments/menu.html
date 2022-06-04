@@ -4,7 +4,7 @@
       <nav class="py-2 bg-light border-bottom header">
         <div class="container d-flex flex-wrap ">
           <ul class="nav me-auto">
-            <li class="nav-item"><a th:href="@{/inicio}" class="nav-link link-dark px-2 active" aria-current="page">Inicio</a></li>
+            <li class="nav-item"><a th:href="@{/}" class="nav-link link-dark px-2 active" aria-current="page">Inicio</a></li>
             <li class="nav-item"><a th:href="@{/noticias}" class="nav-link link-dark px-2">Noticias</a></li>
             <li class="nav-item"><a th:href="@{/libros}" class="nav-link link-dark px-2">Cat&aacute;logo</a></li>
             <li class="nav-item"><a th:href="@{/FA}" class="nav-link link-dark px-2">FAQs</a></li>
@@ -14,15 +14,16 @@
           </ul>
           <ul class="nav">
             <li class="nav-item"><a href="../catalogo/misLibros.html" class="nav-link link-dark px-2">Mis libros</a></li>
-            <li class="nav-item"><a href="../forms/login.html" class="nav-link link-dark px-2">Login</a></li>
+            <li class="nav-item"><a th:href="@{/signup}" class="nav-link link-dark px-2">Login</a></li>
             <li class="nav-item"><a href="../forms/registroUsuario.html" class="nav-link link-dark px-2">Sign up</a></li>
+            <li class="nav-item"><a th:href="@{/logout}" class="nav-link link-dark px-2">Salir</a></li>
           </ul>
         </div>
       </nav>
       <header class="py-3 header ">
         <div class="container d-flex flex-wrap justify-content-center">
             <div class="container d-flex flex-wrap justify-content-center">
-          		<a th:href="@{/inicio}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+          		<a th:href="@{/}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
             		<img th:src="@{~/img/imagenCabecero.jpg}" alt="portada" class="imagenPortada">
             		<span class="fs-4">BIBLIOTECA DEL MAR</span>
           		</a>

@@ -41,8 +41,26 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 																				"/FA",
 																				"/aboutus",
 																				"/resources/**",
-																				"/static/**"
-																				).permitAll().anyRequest().authenticated().and().formLogin().permitAll();	
+																				"/static/**",
+																				"/libros").permitAll()
+																					.antMatchers("/detalle/**").hasAnyAuthority("ADMINISTRADOR","USUARIO")
+																					.antMatchers("/noticia1").hasAnyAuthority("ADMINISTRADOR","USUARIO")
+																					.antMatchers("/noticia2").hasAnyAuthority("ADMINISTRADOR","USUARIO")
+																					.antMatchers("/noticia3").hasAnyAuthority("ADMINISTRADOR","USUARIO")
+																					.antMatchers("/noticia4").hasAnyAuthority("ADMINISTRADOR","USUARIO")
+																					.antMatchers("/noticia5").hasAnyAuthority("ADMINISTRADOR","USUARIO")
+																					//permisos de mis libros para USUARIO
+																					.antMatchers("/createLibro/**").hasAnyAuthority("ADMINISTRADOR")
+																					.antMatchers("/editLibro/**").hasAnyAuthority("ADMINISTRADOR")
+																					.antMatchers("/eliminarLibro/**").hasAnyAuthority("ADMINISTRADOR")
+																					.antMatchers("/autores/**").hasAnyAuthority("ADMINISTRADOR")
+																					.antMatchers("/editAutor/**").hasAnyAuthority("ADMINISTRADOR")
+																					.antMatchers("/createAutor/**").hasAnyAuthority("ADMINISTRADOR")
+																					
+																					
+																					
+		
+		.anyRequest().authenticated().and().formLogin().permitAll();	
 		
 	}
 }

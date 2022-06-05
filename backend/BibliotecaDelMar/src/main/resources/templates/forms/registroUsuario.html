@@ -41,48 +41,48 @@
                     <form th:action="@{/signup}" th:object="${usuario}" method="post">
                         <div class="row">
                             <div class="col-md-12 mb-4">
-                                <div class="form-outline">
+                                <div class="form-group">
+                                    <label class="form-label" name="nombre">Nombre y Apellidos</label>
                                     <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" required="required" />
-                                    <label class="form-label" id="nombre">Nombre y Apellidos</label>
                                 </div>
                             </div>
                         </div>
     
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <div class="form-outline">
+                                <div class="form-group">
+                                    <label class="form-label" name="username">Nombre de usuario</label>
                                     <input type="text"class="form-control" th:field="*{username}" id="username" name="username" required="required"/>
-                                    <label class="form-label" id="username">Nombre de usuario</label>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="email" class="form-control" th:field="*{email}" id="email" name="email" required="required"/>
-                                    <label class="form-label" id="email">Correo electrónico</label>
+                                <div class="form-group">
+                                    <label class="form-label" name="email">Correo electrónico</label>
+                                     <input type="email" class="form-control" th:field="*{email}" id="email" name="email" required="required"/>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <div class="form-outline">
+                                <div class="form-group">
+                                    <label class="form-label"name="email">Contraseña</label>
                                     <input type="password" class="form-control" th:field="*{password}" id="email" name="email" required="required" />
-                                    <label class="form-label" id="email">Contraseña</label>
                                 </div>
                             </div>                       
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <div class="form-outline">
+                                <div class="form-group">
+                                    <label class="form-label" name="rolUser">Rol</label>
                                     <input type="password" id="rolUser" class="form-control" />
-                                    <label class="form-label" for="rolUser">Rol</label>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
-                                <div class="form-outline">
+                                <div class="form-group">
+                                    <label class="form-label" name="statusUser">Status</label>
                                     <input type="password" id="statusUser" class="form-control" />
-                                    <label class="form-label" for="statusUser">Status</label>
                                 </div>
                             </div>
                         </div>

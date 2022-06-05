@@ -1,6 +1,7 @@
 package edu.nerea.proyecto.biblioteca.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,10 +12,13 @@ import edu.nerea.proyecto.biblioteca.entity.Usuario;
 import edu.nerea.proyecto.biblioteca.service.IUsuariosService;
 
 @Controller
-public class HomeController { /*controlador de la pagina de inicio*/
+public class HomeController { //controlador de la pagina de inicio
 
 	@Autowired
 	private IUsuariosService serviceUsuarios;
+	
+	@Autowired //inyeccion de dependencias del bean creado en la clase seguridad
+	private PasswordEncoder passwordEncoder;
 	
 	
 	@GetMapping("/")
@@ -42,6 +46,10 @@ public class HomeController { /*controlador de la pagina de inicio*/
 	@PostMapping("/signup")
 	public String guardarResgistro(Usuario usuario, RedirectAttributes attributes) {
 			//cuando registremos un usuario le asignaremos un estado por defecto junto con un permiso
+		String pwdPlano = usuario.getPassword();
+		String psdEncriptado = passwordEncoder.encode(pwdPlano);
+		usuario.setPassword(psdEncriptado);
+		
 		usuario.setStatus(1); //por defecto cada usuario registrado estará activo
 		Perfil perfil =new Perfil();
 		perfil.setId(2); //le assignamos un perfil de usuario

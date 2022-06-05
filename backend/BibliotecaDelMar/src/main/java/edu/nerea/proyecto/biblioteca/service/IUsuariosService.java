@@ -12,5 +12,5 @@ public interface IUsuariosService {
 	Usuario buscarPorId(Integer idUsuario);
 	List<Usuario> buscarTodosUsuarios();
 	void addReservas(String username, Integer idLibro);
-	Usuario encontrarPorUsername(String username);
+	Usuario buscarPorUsername(String username);
 }

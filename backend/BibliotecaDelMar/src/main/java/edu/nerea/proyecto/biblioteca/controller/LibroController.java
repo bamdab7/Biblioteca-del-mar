@@ -122,7 +122,7 @@ public class LibroController {
 		
 		String username= auth.getName();
 		///System.out.println(username);
-		Usuario user= serviceUsuarios.encontrarPorUsername(username);
+		Usuario user= serviceUsuarios.buscarPorUsername(username);
 		//System.out.println(user);
 		List <Libro> reservas = user.getReservas();
 		//System.out.println(reservas);

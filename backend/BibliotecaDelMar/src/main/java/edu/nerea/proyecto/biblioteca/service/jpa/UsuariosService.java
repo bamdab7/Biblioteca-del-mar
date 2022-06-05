@@ -48,7 +48,7 @@ public class UsuariosService implements IUsuariosService {
 	}
 
 	@Override
-	public Usuario encontrarPorUsername(String username) {
+	public Usuario buscarPorUsername(String username) {
 		return usuariosRepo.findByUsername(username);
 	}
 
@@ -60,5 +60,6 @@ public class UsuariosService implements IUsuariosService {
 		}
 		return null;
 	}
+
 
 }

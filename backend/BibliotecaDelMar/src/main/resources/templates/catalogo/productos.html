@@ -54,12 +54,12 @@
         <table class="table table-striped caption-top align-middle">
             <caption>
 	            <div class="row">
-	                <div class="col-3"> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
+	                <div class="col-3" sec:authorize="hasAnyAuthority('ADMINISTRADOR')"> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
 	     				<a  th:href="@{/createLibro}" role="button" class="btn btn-outline-success">
 	                        <i class="fas fa-plus"></i> añadir nuevo libro
 	                    </a>
 	                </div>
-	                <div class="col-9"> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
+	                <div class="col-9" sec:authorize="hasAnyAuthority('ADMINISTRADOR')"> <!--BLOQUEAR ACCESO SI NO ES ADMINISTRADOR-->
 	                    <a th:href="@{/autores}" role="button" class="btn btn-outline-primary">
 	                         Listado de autores disponibles
 	                    </a>
@@ -92,12 +92,12 @@
                         	<span th:text="${libro.autor.apellidos}"> </span>
                          </td>
                         <td th:text="${libro.paginas}"></td>
-                        <td>
+                        <td sec:authorize="hasAnyAuthority('ADMINISTRADOR')">
                             <a th:href="@{/editLibro/{id} (id=${libro.idLibro}) }" role="button"> <!--MANDAR PETICIONES A UN FORMULARIO MEDIANTE UNA PETICION POST-->
                                 <i class="fas fa-edit"> </i> edit
                             </a>
                         </td>
-                        <td>
+                        <td sec:authorize="hasAnyAuthority('ADMINISTRADOR')">
                             <a  th:href="@{/eliminarLibro/{id} (id=${libro.idLibro}) }" role="button" onclick="return confirm('¿Desea eliminarlo?')" title="Eliminar producto">
                                 <i class="fas fa-backspace" aria-hidden="true"> </i> delete
                             </a>

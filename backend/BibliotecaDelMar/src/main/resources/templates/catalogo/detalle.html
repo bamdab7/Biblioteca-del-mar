@@ -49,7 +49,7 @@
                             <h5 class="card-title"><span th:text="${libro.titulo}"></span> ( <em><span th:text="${libro.tipo}"></span></em>  )</h5>
                             <p class="card-text">Saga: <span th:text="${libro.saga}"></span></p>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer" sec:authorize="hasAnyAuthority('USUARIO')">
                             <a class="btn botonCard" type="button" href="#"><i class="bi bi-bookmark-plus"> Reservar </i></a>
                         </div>
                     </div>

@@ -38,12 +38,12 @@
                     <div class="card-body p-4 p-md-5">
                         <h3 class="mb-4 pb-2 textoIntroForm"><i class="bi bi-person-circle"></i> Registro de usuario</h3>
     
-                    <form action="">
+                    <form th:action="@{/signup}" th:object="${usuario}" method="post">
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <div class="form-outline">
-                                    <input type="text" id="nameUser" class="form-control" />
-                                    <label class="form-label" for="nameUser">Nombre y Apellidos</label>
+                                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" required="required" />
+                                    <label class="form-label" id="nombre">Nombre y Apellidos</label>
                                 </div>
                             </div>
                         </div>
@@ -51,14 +51,14 @@
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <input type="text" id="usernameUser" class="form-control" />
-                                    <label class="form-label" for="usernameUser">Nombre de usuario</label>
+                                    <input type="text"class="form-control" th:field="*{username}" id="username" name="username" required="required"/>
+                                    <label class="form-label" id="username">Nombre de usuario</label>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <input type="email" id="emailUser" class="form-control" />
-                                    <label class="form-label" for="emailUser">Correo electrónico</label>
+                                    <input type="email" class="form-control" th:field="*{email}" id="email" name="email" required="required"/>
+                                    <label class="form-label" id="email">Correo electrónico</label>
                                 </div>
                             </div>
                         </div>
@@ -66,16 +66,10 @@
                         <div class="row">
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
-                                    <input type="password" id="passUser" class="form-control" />
-                                    <label class="form-label" for="passUser">Contraseña</label>
+                                    <input type="password" class="form-control" th:field="*{password}" id="email" name="email" required="required" />
+                                    <label class="form-label" id="email">Contraseña</label>
                                 </div>
-                            </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="password" id="phoneNumber" class="form-control" />
-                                    <label class="form-label" for="phoneNumber">Repite contraseña</label>
-                                </div>
-                            </div>
+                            </div>                       
                         </div>
                         <hr>
                         <div class="row">
@@ -94,7 +88,7 @@
                         </div>
                          <div class="row">
                             <div class="d-flex justify-content-center pt-1 ">
-                                <button class="btn btn-primary btn-rounded" type="button">Sign up</button>
+                                <button class="btn btn-primary btn-rounded" type="submit">Sign up</button>
                             </div>
                          </div>
                     </form>

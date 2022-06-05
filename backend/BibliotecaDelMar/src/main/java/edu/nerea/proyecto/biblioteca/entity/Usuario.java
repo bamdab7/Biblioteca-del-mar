@@ -1,9 +1,16 @@
 package edu.nerea.proyecto.biblioteca.entity;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,53 +26,83 @@ public class Usuario {
 	private String password;
 	private Integer status;
 	
-	public Usuario(){
-		super();
+	@ManyToMany(fetch=FetchType.EAGER)
+	@JoinTable(name="usuarioperfil",
+			joinColumns = @JoinColumn(name="idUsuario"),
+			inverseJoinColumns = @JoinColumn(name="idPerfil"))
+	private List<Perfil> perfiles;
+	
+	public void agregar(Perfil temPerfil) {
+		if (perfiles == null) {
+			perfiles = new LinkedList<Perfil>();
+		}
+		perfiles.add(temPerfil);
 	}
 
-	public Integer getId(){
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id){
-		this.id= id;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public String getNombre(){
+
+	public String getNombre() {
 		return nombre;
 	}
-	public void setNombre(String nombre){
-		this.nombre=nombre;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-	public String setEmail(){
+
+	public String getEmail() {
 		return email;
 	}
-	public void getEmail(String email){
-		this.email=email;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String setUsername(){
+
+	public String getUsername() {
 		return username;
 	}
-	public void getUsername(String username){
-		this.username=username;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String setPassword(){
+
+	public String getPassword() {
 		return password;
 	}
-	public void getPassword(String password){
-		this.password=password;
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public Integer setStatus(){
+
+	public Integer getStatus() {
 		return status;
 	}
-	public void getStatus(Integer status){
-		this.status=status;
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public List<Perfil> getPerfiles() {
+		return perfiles;
+	}
+
+	public void setPerfiles(List<Perfil> perfiles) {
+		this.perfiles = perfiles;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", username=" + username + ", password="
-		+ password + ", status=" + status +  "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", username=" + username
+				+ ", password=" + password + ", status=" + status + "]";
 	}
-
+	
+	
+	
 
 	
 	

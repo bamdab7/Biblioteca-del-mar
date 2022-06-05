@@ -79,7 +79,7 @@
             <tbody>
                 <tr class="anchoTabla" th:each="libro : ${libros}">
                     <th scope="row" th:text="${libro.idLibro}"></th>
-                        <td><img th:src="@{/img/{img} (img=${libro.imagen})}" alt="libro" class="tablaLibro"></td>
+                        <td><img th:src="@{~/img/{img} (img=${libro.imagen})}" alt="libro" class="tablaLibro"></td>
                         <td>
                         	<a th:href="@{/detalle/{id} (id=${libro.idLibro}) }" >
                         		<span th:text="${libro.titulo}"></span>

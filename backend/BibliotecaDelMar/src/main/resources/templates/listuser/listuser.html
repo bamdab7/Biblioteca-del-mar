@@ -34,7 +34,7 @@
     <section class="py-4 text-center container"> <!--contenedor/seccion que tiene el titulo ese chulo-->
         <nav aria-label="breadcrumb" class= "card-header">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../inicio/index.html">Inicio</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
               <li class="breadcrumb-item active" aria-current="page">Listado usuarios</li>
             </ol>
           </nav>
@@ -48,100 +48,29 @@
     <div class="tablaProductos table-responsive m-4">
         <table class="table table-striped caption-top align-middle">
             <caption>
-                <h3 class="m-3 pb-2"><i class="bi bi-person-circle"></i> Listado de usuarios</h3>
+                <h3><i class="bi bi-person-circle m-3 pb-2"></i> Listado de usuarios</h3>
             </caption>
             <thead>
-                <tr>
-                    <th scope="col">#</th>
+                <tr >
                     <th scope="col">Nombre</th>
-                    <th scope="col">Usuario</th>
+                    <th scope="col">Username</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Contraseña</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Estatus</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                       
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>318419</td>
-                        <td>Usuario</td>
-                        <td>No Activo</td>
+                <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.nombre}"></td>
+                        <td th:text="${usuario.username}"></td>
+                        <td th:text="${usuario.email}"></td>
+                        <td th:text="${usuario.status == 1 ? 'Activo' : 'Bloqueado' }"></td>
                         <td>
-                            <a  href="../forms/registroUsuario.html" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button" >
-                                <i class="fas fa-backspace"> </i> delete
+                             <a th:href="@{/deleteuser/{id} (id=${usuario.id}) }" role="button" onclick="return confirm('¿Desea eliminarlo?')" title="Eliminar usuario">
+                                <i class="fas fa-edit"> </i> delete
                             </a>
                         </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                        
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>42598</td>
-                        <td>Aministrador</td>
-                        <td>Activo</td>
-                        <td>
-                            <a  href="../forms/registroUsuario.html" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr >
-                    <th scope="row">3</th>
-                       
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>76584</td>
-                        <td>Usuario</td>
-                        <td>No Activo</td>
-                        <td>
-                            <a  href="../forms/registroUsuario.html" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr >
-                    <th scope="row">4</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>29641265</td>
-                        <td>Administrador</td>
-                        <td>Activo</td>
-                        <td>
-                            <a  href="../forms/registroUsuario.html" role="button">
-                                <i class="fas fa-edit"> </i> edit
-                            </a>
-                        </td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-            </tbody>
+                 </tbody>
         </table>
     </div>
     

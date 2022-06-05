@@ -50,7 +50,7 @@
                             <p class="card-text">Saga: <span th:text="${libro.saga}"></span></p>
                         </div>
                         <div class="card-footer" sec:authorize="hasAnyAuthority('USUARIO')">
-                            <a class="btn botonCard" type="button" href="#"><i class="bi bi-bookmark-plus"> Reservar </i></a>
+                            <a class="btn botonCard" type="button" th:href="@{/reservar/{id} (id=${libro.idLibro}) }"><i class="bi bi-bookmark-plus"> Reservar </i></a>
                         </div>
                     </div>
                 </div>

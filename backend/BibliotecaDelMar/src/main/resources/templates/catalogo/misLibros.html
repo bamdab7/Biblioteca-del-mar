@@ -33,8 +33,8 @@
     <section class="py-4 text-center container"> <!--contenedor/seccion que tiene el titulo ese chulo-->
         <nav aria-label="breadcrumb" class= "card-header">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../inicio/index.html">Inicio</a></li>
-              <li class="breadcrumb-item"><a href="../catalogo/productos.html">Catálogo</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
+              <li class="breadcrumb-item"><a th:href="@{/libros}">Catálogo</a></li>
               <li class="breadcrumb-item active" aria-current="page">Mis libros</li>
             </ol>
           </nav>
@@ -42,7 +42,6 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Mis libros</h1>
                 <p class="lead text-muted">Estos son lo libros que tienes en tu reserva.</p>
-                <p class="lead text-muted">Puedes eliminar en cualquier momento la reserva mediante el botón de <span class="fw-bold">'delete'</span> </p>
             </div>
             </div>
         </div>
@@ -56,63 +55,18 @@
                 <tr>
                     <th scope="col">#</th>
                     <th colspan="2" scope="col" class="text-center tituloT">Título</th>
-                    <th scope="col">Saga</th>
+                    <th scope="col">Tipo</th>
                     <th scope="col">Autor</th>
-                    <th scope="col">Año</th>
+                    <th scope="col">Saga</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="anchoTabla" th:each="libro : ${libros}">
                     <th scope="row">1</th>
-                        <td><img src="../../img/libro.jpg" alt="libro" class="tablaLibro"></td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>
-                            <a  href="#!" role="button" >
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                        <td><img src="../../img/libro2.jpg" alt="libro2" class="tablaLibro"></td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>Mark</td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                        <td><img src="../../img/libro3.jpg" alt="libro3" class="tablaLibro"></td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>Mark</td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                        <td><img src="../../img/libro4.jpg" alt="libro4" class="tablaLibro"></td>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>Mark</td>
-                        <td>
-                            <a  href="#!" role="button">
-                                <i class="fas fa-backspace"> </i> delete
-                            </a>
-                        </td>
+                        <td><img th:src="@{~/img/{img} (img=${libro.imagen})}" alt="libro" class="tablaLibro"></td>
+                        <td th:text="${libro.titulo}">Mark</td>
+                        <td th:text="${libro.tipo}"></td>
+                        <td th:text="${libro.saga}"></td>
                 </tr>
             </tbody>
         </table>

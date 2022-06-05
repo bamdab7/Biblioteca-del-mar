@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +22,11 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.nerea.proyecto.biblioteca.entity.Libro;
+import edu.nerea.proyecto.biblioteca.entity.Usuario;
 import edu.nerea.proyecto.biblioteca.service.IAutorService;
 import edu.nerea.proyecto.biblioteca.service.IEditorialService;
 import edu.nerea.proyecto.biblioteca.service.ILibroService;
+import edu.nerea.proyecto.biblioteca.service.IUsuariosService;
 
 @Controller //cambiar a controller al mostrar vistas html (restcontroller, controller)
 public class LibroController {
@@ -34,6 +37,8 @@ public class LibroController {
 	private IEditorialService serviceEditorial;
 	@Autowired
 	private IAutorService serviceAutor;
+	@Autowired
+	private IUsuariosService serviceUsuarios;
 
 	
 		//esta ruta nos mostrara un listado de los libros (tabla)
@@ -65,12 +70,13 @@ public class LibroController {
         byte[] buffer = new byte[initialStream.available()];
         initialStream.read(buffer);
 
-        File file = new File("src/main/resources/static/img/imagen" + libro.getIdLibro() + ".jpg"); //guardamos la imagen
+        File file = new File("src/main/resources/static/img/" + libro.getTitulo()+ ".jpg"); //guardamos la imagen
 
         try (OutputStream outStream = new FileOutputStream(file)) {
             outStream.write(buffer);
         }
-        libro.setImagen(libro.getIdLibro() + ".jpg");
+       // imagenArchivo= libro.getTitulo()+ "jpg";
+        libro.setImagen(file.getName());
 		serviceLibros.guardarLibro(libro);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el producto correctamente");
 		return "redirect:/libros";
@@ -102,4 +108,25 @@ public class LibroController {
 	}
 	
 	//pageable
+	
+	//añadiendo libros a los usuarios, primero tendremos que obtener el usuario que esta logeado
+	@GetMapping("/reservar/{id}")
+	public String reserve(@PathVariable("id") Integer idLibro,Authentication auth) {
+		String username = auth.getName();	
+		serviceUsuarios.addReservas(username, idLibro);
+		return "redirect:/mostrarReserva" ;
+	}
+	
+	@GetMapping("/mostrarReserva")
+	public String mostrarRerservas(Model model,Authentication auth) {
+		
+		String username= auth.getName();
+		///System.out.println(username);
+		Usuario user= serviceUsuarios.encontrarPorUsername(username);
+		//System.out.println(user);
+		List <Libro> reservas = user.getReservas();
+		//System.out.println(reservas);
+		model.addAttribute("libros", reservas);
+		return "catalogo/misLibros.html";
+	}
 }

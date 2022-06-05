@@ -13,7 +13,7 @@
 
           </ul>
           <ul class="nav">
-            <li class="nav-item" sec:authorize="hasAnyAuthority('USUARIO')"><a href="../catalogo/misLibros.html" class="nav-link link-dark px-2">Mis libros</a></li>
+            <li class="nav-item" sec:authorize="hasAnyAuthority('USUARIO')"><a th:href="@{/mostrarReserva}"  class="nav-link link-dark px-2">Mis libros</a></li>
             <li class="nav-item"><a th:href="@{/login}" class="nav-link link-dark px-2">Login</a></li>
             <li class="nav-item"><a th:href="@{/signup}" class="nav-link link-dark px-2">Sign up</a></li>
             <li class="nav-item"><a th:href="@{/logout}" class="nav-link link-dark px-2">Salir</a></li>

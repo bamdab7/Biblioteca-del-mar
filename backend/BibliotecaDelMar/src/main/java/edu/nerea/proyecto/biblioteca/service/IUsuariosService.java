@@ -9,5 +9,8 @@ public interface IUsuariosService {
 	//intefaz para los usuarios
 	void guardar(Usuario usuario);
 	void eliminar (Integer idUsuario);
+	Usuario buscarPorId(Integer idUsuario);
 	List<Usuario> buscarTodosUsuarios();
+	void addReservas(String username, Integer idLibro);
+	Usuario encontrarPorUsername(String username);
 }

@@ -32,12 +32,34 @@ public class Usuario {
 			inverseJoinColumns = @JoinColumn(name="idPerfil"))
 	private List<Perfil> perfiles;
 	
+
+	@ManyToMany
+	@JoinTable(name="librousuario",
+				joinColumns = @JoinColumn(name="idUsuario"),
+				inverseJoinColumns = @JoinColumn(name="idLibro"))		
+	private List<Libro> reservas; //estableciendo una relacion entre los libros y sus usuarios
+	
+	
 	public void agregar(Perfil temPerfil) {
 		if (perfiles == null) {
 			perfiles = new LinkedList<Perfil>();
 		}
 		perfiles.add(temPerfil);
 	}
+	
+
+	
+	public List<Libro> getReservas() {
+		return reservas;
+	}
+
+
+
+	public void setReservas(List<Libro> reservas) {
+		this.reservas = reservas;
+	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -95,12 +117,20 @@ public class Usuario {
 		this.perfiles = perfiles;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", email=" + email + ", username=" + username
-				+ ", password=" + password + ", status=" + status + "]";
+				+ ", password=" + password + ", status=" + status + ", perfiles=" + perfiles + ", reservas=" + reservas
+				+ "]";
 	}
+
+
+
 	
+	
+
 	
 	
 

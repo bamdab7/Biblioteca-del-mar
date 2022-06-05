@@ -37,6 +37,7 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 											"/img/**",
 											"/css/**").permitAll().antMatchers("/",
 																				"/signup",
+																				"/bcrypt/**",
 																				"/actividad1",
 																				"/actividad2",
 																				"/actividad3",

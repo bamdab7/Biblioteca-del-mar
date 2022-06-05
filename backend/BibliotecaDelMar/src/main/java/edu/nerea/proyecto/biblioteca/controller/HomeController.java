@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.nerea.proyecto.biblioteca.entity.Perfil;
@@ -58,5 +60,12 @@ public class HomeController { //controlador de la pagina de inicio
 		serviceUsuarios.guardar(usuario);
 		
 		return "redirect:/"; //nos redirige directamente a la ventana de inicio cuando nos iniciamos
+	}
+	
+	//metodo creado temporalmente para poder encriptar las contraseñas de usuarios anteriores de la base de datos
+	@GetMapping("/bcrypt/{texto}")
+	@ResponseBody //asi no desplegamos una vista
+	public String encriptamiento(@PathVariable("texto") String texto) {
+		return texto + "encriptado" + passwordEncoder.encode(texto);
 	}
 }

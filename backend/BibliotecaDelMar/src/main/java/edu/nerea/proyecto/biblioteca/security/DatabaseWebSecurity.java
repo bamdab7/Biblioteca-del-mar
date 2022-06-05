@@ -67,7 +67,7 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 																					
 																					
 		
-		.anyRequest().authenticated().and().formLogin().permitAll();	
+		.anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll();	
 		
 	}
 	//encriptamiento de contraseñas

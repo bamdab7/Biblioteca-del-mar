@@ -1,7 +1,10 @@
 package edu.nerea.proyecto.biblioteca.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +25,17 @@ public class HomeController { //controlador de la pagina de inicio
 	@Autowired //inyeccion de dependencias del bean creado en la clase seguridad
 	private PasswordEncoder passwordEncoder;
 	
+	@GetMapping("/login")
+	public String mostrarLogin() {
+		return "forms/login.html";
+	}
 	
+	@GetMapping("/logout")
+	public String logout(HttpServletRequest request) {
+		SecurityContextLogoutHandler logoutHandler= new SecurityContextLogoutHandler();
+		logoutHandler.logout(request, null, null);
+		return "redirect:/login";
+	}
 	@GetMapping("/")
 	public String mostrarInicio() {
 		return "inicio/index.html";

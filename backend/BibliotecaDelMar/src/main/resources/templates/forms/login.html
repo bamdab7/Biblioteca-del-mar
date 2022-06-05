@@ -38,27 +38,27 @@
                     <div class="col-md-8 d-flex align-items-center">
                       <div class="card-body py-5 px-4 p-md-5">
     
-                        <form action="">
+                        <form name="form" th:action="@{/login}" method="POST">
                           <h4 class="fw-bold mb-3 textoIntroForm">Iniciar sesión - Biblioteca del Mar</h4>
                           <p class="mb-4 subtextoInfoForm">Regístrate para disfrutar de numerosas ventajas!</p>
     
-                          <div class="form-outline mb-4">
-                            <input type="email" id="loginUsername" class="form-control" />
-                            <label class="form-label" for="loginUsername">Nombre de usuario</label>
+                          <div class="form-group mb-4">
+                           	<label class="form-label">Nombre de usuario</label>
+                            <input type="text" name="username" class="form-control" />
                           </div>
     
-                          <div class="form-outline mb-4">
-                            <input type="password" id="loginPass" class="form-control" />
-                            <label class="form-label" for="loginPass">Contraseña</label>
+                          <div class="form-group mb-4">
+                          	<label class="form-label">Contraseña</label>
+                            <input type="password" name="password" class="form-control" />
                           </div>
     
                           <div class="d-flex justify-content-end pt-1 mb-4">
-                            <button class="btn btn-primary btn-rounded" type="button">Log in</button>
+                            <button class="btn btn-primary btn-rounded" type="submit">Log in</button>
                           </div>
+                           </form>
                           <hr>
-                            <a class="linkHover float-start" href="../inicio/index.html">Volver al inicio</a>
-                            <a class=" link float-end" href="./registroUsuario.html">¿No estás logeado? Registrate</a>
-                        </form>
+                            <a class="linkHover float-start" th:href="@{/}">Volver al inicio</a>
+                            <a class=" link float-end" th:href="@{/signup}">¿No estás logeado? Registrate</a>
                       </div>
                     </div>
                   </div>

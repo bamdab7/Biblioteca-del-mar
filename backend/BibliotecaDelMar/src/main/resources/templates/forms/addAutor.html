@@ -27,13 +27,13 @@
         <div class="card">
           <h4 class="card-header"><strong>Datos del autor</strong></h4>              
           <div class="card-body">
-            <form th:action="@{/saveAutor}" method="post" th:object="${autor}" enctype="multipart/form-data">    
+            <form th:action="@{/saveAutor}" method="POST" th:object="${autor}" enctype="multipart/form-data">    
               <div class="row">
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="nombre">Nombre</label>
                    	<input type="hidden" th:field="*{idAutor}">
-                   	<input type= "hidden" th:field="*{imagen}">
+                    <input type= "hidden" th:field="*{imagen}"> 
                     <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="" required="required">
                   </div>
                 </div>
@@ -60,17 +60,18 @@
                     <input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen">
                   </div>
                 </div>
+                
               </div> 
+               
               <hr>
               <div class="row">
                 <div class="col-md-3">
                   <label for="imagen">Prev. imagen</label>
                   <img class="rounded mx-auto d-block" th:src="@{/img/{img} (img=${autor.imagen}) }" alt="Fotografia del autor" width="200" height="200">            
-                </div>           
+                </div>   
+                        
               </div> 
-              <div class="col-md-3"> 
                 <button type="submit" class="btn btn-primary">Guardar</button> 
-              </div>
               </form>
            </div>    
          </div>

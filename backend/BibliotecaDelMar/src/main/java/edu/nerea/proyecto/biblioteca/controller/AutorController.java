@@ -47,20 +47,19 @@ public class AutorController {
 		if(result.hasErrors()){
 			for(ObjectError error : result.getAllErrors()){
 				System.out.println("Error: " + error.getDefaultMessage());
-			} //nos informa que error se esta cometiendo y nos devuelve al formulario
-			
+			} //nos informa que error se esta cometiendo y nos devuelve al formulario			
 			return "forms/addAutor.html";
 		}
 		InputStream initialStream = imagen.getInputStream();
         byte[] buffer = new byte[initialStream.available()];
         initialStream.read(buffer);
 
-        File file = new File("src/main/resources/static/img/imagen" + autor.getIdAutor() + ".jpg"); //guardamos la imagen
+        File file = new File("src/main/resources/static/img/" + autor.getNombre() + ".jpg"); //guardamos la imagen
 
         try (OutputStream outStream = new FileOutputStream(file)) {
             outStream.write(buffer);
         }
-        autor.setImagen(autor.getIdAutor()+ ".jpg");
+        autor.setImagen(autor.getNombre()+ ".jpg");
 		serviceAutor.guardarAutor(autor);
 		attributes.addFlashAttribute ("msg", "Se ha guardado el autor");
 		return "redirect:/autores";
@@ -70,7 +69,6 @@ public class AutorController {
         return "forms/addAutor.html";
     }
 
-    ///saveAutor
 
 
         //metodo eliminar autor

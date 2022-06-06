@@ -57,8 +57,8 @@
             </caption>
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col"></th>
+                 <!-- <th scope="col">#</th> -->   
+                 <!-- <th scope="col"></th> -->   
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Status</th>
@@ -66,8 +66,8 @@
             </thead>
             <tbody>
                 <tr class="anchoTabla" th:each="autor : ${autores}">
-                    <th scope="row" th:text="${autor.idAutor}"></th>
-                        <td><img th:src="@{/img/{img} (img=${autor.imagen})}" alt="autor" class="tablaLibro"></td>
+                  <!-- <th scope="row" th:text="${autor.idAutor}"></th> -->  
+                     <!-- <td><img th:src="@{/img/{img} (img=${autor.imagen})}" alt="autor" class="tablaLibro"></td> -->   
                         <td th:text="${autor.nombre}"></td>
                         <td th:text="${autor.apellidos}"></td>
                         <td th:text="${autor.status}"></td> <!--revisar-->

@@ -23,7 +23,7 @@ public class AutorService implements IAutorService{
 
     @Override
     public void guardarAutor(Autor autor) {
-        // TODO Auto-generated method stub
+       repoAutores.save(autor);
         
     }
 

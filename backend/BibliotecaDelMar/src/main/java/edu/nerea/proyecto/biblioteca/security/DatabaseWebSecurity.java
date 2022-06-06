@@ -54,11 +54,13 @@ public class DatabaseWebSecurity extends WebSecurityConfigurerAdapter {
 																					.antMatchers("/noticia4").hasAnyAuthority("ADMINISTRADOR","USUARIO")
 																					.antMatchers("/noticia5").hasAnyAuthority("ADMINISTRADOR","USUARIO")
 																					//permisos de mis libros para USUARIO
+																					.antMatchers("/mostrarReserva").hasAnyAuthority("USUARIO")
 																					.antMatchers("/createLibro/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/editLibro/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/eliminarLibro/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/autores/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/editAutor/**").hasAnyAuthority("ADMINISTRADOR")
+																					.antMatchers("/saveAutor/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/createAutor/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/usuarios/**").hasAnyAuthority("ADMINISTRADOR")
 																					.antMatchers("/deleteuser/**").hasAnyAuthority("ADMINISTRADOR")

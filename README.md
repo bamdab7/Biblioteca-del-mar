@@ -3,6 +3,7 @@
 Proyecto sobre una Bilbioteca en el que se gestionan libros, actividades y noticias.
 
 ## Que nos encontramos en este repositorio?
+EL proyecto se encontrará dentro de la carpeta **backend**. 
 En este repositorio nos encontraremos con diversos archivos, destacando el propio proyecto junto con infomación acerca de su estructura y componentes. También contiene una sección de diseño en la que
 se presentan tanto los diseños previos de la página, su guia de estilos o su diseño final.
 Tambien se proporciona una documentacion detallada del proyecto en el que se muestran todos lo ensencial, junto con capturas explicadas de su funcionamiento.
